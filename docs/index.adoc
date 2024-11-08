@@ -1,6 +1,6 @@
 = Projektauftrag
 
-Azra ÖZDEMiR |Almina SILNOVIC| {docdate}
+Azra ÖZDEMiR | Almina SILNOVIC | Lejla Music {docdate}
 
 == 1. Projektübersicht
 === Titel: Digitale Meldestelle für städtische Mängel
@@ -29,25 +29,25 @@ Unser Projekt entstand, weil wir gemerkt haben, dass in vielen Städten kleine, 
 == 4. Projektendergebnis
 Die messbaren Eigenschaften des Projektergebnisses sind:
 
-===== Funktionalität +
+===== Funktionalität
 ** Die Plattform muss alle wichtigen Funktionen wie Problembeschreibung, Foto-Upload, Standortangabe und Statusverfolgung bieten.
 
-===== Benutzerfreundlichkeit +
+===== Benutzerfreundlichkeit
 ** Die Anwendung sollte einfach zu bedienen und intuitiv sein, sodass jeder Bürger, unabhängig von technischen Kenntnissen, sie nutzen kann.
 
-===== Zugänglichkeit +
+===== Zugänglichkeit
 ** Die Plattform muss auf verschiedenen Geräten wie Smartphones, Tablets und Computern gut funktionieren.
 
-===== Reaktionsgeschwindigkeit +
+===== Reaktionsgeschwindigkeit
 ** Die Behörden sollten in der Lage sein, Meldungen innerhalb einer festgelegten Zeitspanne zu bearbeiten.
 
-===== Nutzerzahlen +
+===== Nutzerzahlen
 ** Eine ausreichende Anzahl von Nutzern (Bürgern) sollte die Plattform aktiv verwenden, um ihre Probleme zu melden.
 
 Erfüllt die Plattform diese Anforderungen, kann von einem erfolgreichen Projekt gesprochen werden.
 
 == 5. Projektziel(e)
- Unser Hauptziel ist es, eine digitale Lösung zu entwickeln, die den Stadtalltag für die Bürger vereinfacht. Anstatt auf die Behebung von Problemen zu warten, möchten wir den Menschen eine Möglichkeit bieten, schnell und unkompliziert Missstände in ihrer Umgebung zu melden. Die Plattform soll die Bürger dazu anregen, aktiv zur Verbesserung ihrer Stadt beizutragen und die Stadtverwaltung dabei unterstützen, gezielt und effizient zu handeln. Wir möchten eine Kultur schaffen, in der schnelles Handeln und Verantwortung übernommen werden, sodass jeder Beitrag zu positiven Veränderungen führt.
+Unser Hauptziel ist es, eine digitale Lösung zu entwickeln, die den Stadtalltag für die Bürger vereinfacht. Anstatt auf die Behebung von Problemen zu warten, möchten wir den Menschen eine Möglichkeit bieten, schnell und unkompliziert Missstände in ihrer Umgebung zu melden. Die Plattform soll die Bürger dazu anregen, aktiv zur Verbesserung ihrer Stadt beizutragen und die Stadtverwaltung dabei unterstützen, gezielt und effizient zu handeln. Wir möchten eine Kultur schaffen, in der schnelles Handeln und Verantwortung übernommen werden, sodass jeder Beitrag zu positiven Veränderungen führt.
 
 Unsere Plattform soll nicht nur funktional sein, sondern auch das Gefühl vermitteln, gemeinsam an einer besseren Stadt zu arbeiten – ein Ort, an dem jeder Bürger mitgestalten kann.
 
@@ -68,9 +68,7 @@ Unsere Plattform soll nicht nur funktional sein, sondern auch das Gefühl vermit
 
 ==== Zielgruppenanalyse, Festlegung der Funktionen, Erstellung eines Lastenhefts
 ** Am Anfang schauen wir uns genau an, wer die Plattform später nutzt. Wir überlegen, was die Bürger und die Stadtverwaltung brauchen und was sie erwarten, damit alles gut funktioniert.
-
 ** Wir entscheiden, welche Hauptfunktionen die Plattform haben soll – also zum Beispiel: Probleme melden, Fotos hochladen, den Standort markieren und den Status verfolgen. Außerdem legen wir fest, welche Technik gebraucht wird, damit alles auf verschiedenen Geräten gut läuft.
-
 ** In diesem Schritt sammeln wir alle Anforderungen, die die Plattform erfüllen muss. Das umfasst nicht nur Funktionen wie Benutzerfreundlichkeit oder Sicherheit, sondern auch Dinge wie Barrierefreiheit.
 
 === Design
@@ -78,13 +76,26 @@ Unsere Plattform soll nicht nur funktional sein, sondern auch das Gefühl vermit
 
 ==== Wireframes, UI/UX-Design, Interaktiven Prototyp
 ** Zu Beginn machen wir erstmal grobe Skizzen (Wireframes), um zu zeigen, wie die Struktur und Navigation der Plattform aussehen sollen. Das hilft, die Nutzerführung klar und einfach zu gestalten und einen logischen Ablauf zu finden.
-
 ** Nachdem die Struktur festgelegt ist, geht's an das Design. Dabei achten wir darauf, dass die Benutzeroberfläche einfach und intuitiv zu bedienen ist und gleichzeitig modern aussieht. Die Farben, Schriften und die Anordnung der Elemente werden so gewählt, dass sie gut zusammenpassen und die Plattform sowohl funktional als auch optisch ansprechend ist.
-
 ** Wir erstellen einen interaktiven Prototypen, damit wir testen können, wie die Plattform funktioniert, bevor die eigentliche Entwicklung startet. So können wir frühzeitig Probleme erkennen und anpassen.
 
 === Entwicklung der Plattform
  Unser Ziel dabei ist: Die tatsächliche Umsetzung der Plattform mit allen definierten Funktionen.
+
+==== Wahl der Technologie, Backend & Frontend - Entwicklung, Integration der API
+
+=== Launch und Betrieb
+ Unser Ziel dabei ist: Die Plattform der Öffentlichkeit zugänglich machen und kontinuierlich verbessern.
+
+** Die Serverlogik wird entwickelt, um die Meldungen der Nutzer zu verarbeiten, zu speichern und die Kommunikation zwischen der Plattform und den zuständigen Behörden zu ermöglichen. Dazu gehört auch die Integration von Sicherheitsmechanismen, um Daten zu schützen.
+** Das Frontend wird auf Basis des Design-Prototyps entwickelt. Es enthält alle erforderlichen Funktionen wie die Möglichkeit, Probleme zu melden, Fotos hinzuzufügen, Standortdaten zu integrieren und den Bearbeitungsstatus der Meldungen zu verfolgen.
+** Wir bauen eine API, die das Frontend mit dem Backend verbindet. So stellen wir sicher, dass alle Daten richtig übertragen werden und der Status der Meldung immer aktuell ist.
+
+==== Öffentlichkeitsarbeit, Benutzerfeedback sammeln,
+ Unser Ziel dabei ist: Ziel: Die Plattform bekannt machen und stetig weiterentwickeln.
+
+** Nach dem Start holen wir uns Feedback von den Nutzern, um Schwächen zu erkennen und das System weiter zu verbessern.
+** Die Plattform wird ständig überwacht und bei Bedarf optimiert. Dazu gehört das Beheben von Fehlern, das Hinzufügen neuer Funktionen und das Anpassen an neue technische Entwicklungen.
 
 == 7. Projektphasen / Meilensteine
 
