@@ -1,0 +1,12 @@
+= Pflichtenheft
+
+Azra Özdemir | Almina Silnovic | Lejla Music
+{docdate}
+
+== 1. Beschreibung der Ausgangslage
+== 2. Ist-Zustand
+== 3. Zielsetzung
+== 4. Anforderungen (Soll)
+=== 4.1 Anforderungen an die Applikationssoftware
+=== 4.2 Anforderungen an die Systemplattform
+== 5. Mengengerüst

@@ -1,0 +1,114 @@
+= Projektauftrag
+
+Azra Özdemir | Almina Silnovic | Lejla Music
+{docdate}
+
+== 1. CityCare - digitale Meldestelle für städtische Mängel
+
+In vielen Städten ist es für Bürger schwierig, lokale Probleme wie kaputte Straßen oder defekte Laternen zu melden. Unsere Plattform soll das ändern, indem sie es den Bürgern ermöglicht, solche Probleme einfach zu melden.
+
+== 2. Projektauftraggeber
+Die Idee für das Projekt "Digitale Meldestelle für städtische Mängel" stammt von Almina Silnovic. Inspiriert von dieser Vision habe ich, Azra Özdemir, mich dem Projekt angeschlossen und die Rolle des Projektauftraggebers übernommen. Gemeinsam besuchen wir die HTBLA Leonding, Abteilung Informatik, und sind beide 17 Jahre alt.
+
+Kontaktdaten:
+
+Projektauftraggeberin: Azra Özdemir +
+Telefon: +43 5263 5277 +
+E-Mail: azraozdemir@icloud.com +
+Adresse: Keplerstraße 22, 4061 Pasching
+
+== 3. Projekthintergrund
+=== 3.1 Sinn & Zweck
+**Problem:** Es gibt viele Mängel in manchen Gemeinden, die spät behoben werden
+oder gar nicht erst von den Bürgern gemeldet werden, wodurch die Stadtverwaltung
+nie davon mitbekommt.
+
+Unser Projekt soll den Bürgern einer Gemeinde eine Plattform
+zu bieten, auf der sie auf städtische Probleme, wie zum Beispiel Vandalismus,
+beschädigte Straßen etc. aufmerksam machen können, um so die nötigen Verwaltungen
+zu informieren, damit das jeweilige Problem schneller gelöst werden kann.
+
+=== 3.2 Projektauslöser
+Unser Projekt entstand, weil wir gemerkt haben, dass in vielen Städten kleine, aber oft vorkommende Probleme nicht schnell genug gelöst werden, weil meistens die Stadtverwaltung davon nicht weiß. Das verleiht der Stadt einen schlechten Eindruck und wirkt sich auch negativ auf die Zufriedenheit der Bürger aus.
+
+== 4. Projektergebnis
+===== Was?
+** Wir möchten unser Projekt in Form einer Website anbieten. Sie muss folgende Funktionen bieten: Problembeschreibung (Worum geht es? Was ist das Problem?), Foto-Upload, Standortangabe (Welche Gemeinde?) und Statusverfolgung (Ist das Problem schon behoben?). Das Projekt soll zudem benutzerfreundlich gestaltet sein.
+
+===== Bis Wann?
+** Das Website soll ungefähr innerhalb 9 Monate fertig werden.
+
+===== Wie gut?
+** Die Website muss fehlerfrei laufen können und effizient sein, was heißt, dass zum Beispiel der Foto Upload schnell funktioniert. Die Website muss auf allen Browsern und unabhängig vom Gerät (Handy, Laptop) aufrufbar sein.
+
+== 5. Projektziele
+Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem wir die Kommunikation zwischen Bürgern und der Stadtverwaltung vereinfachen. Die Bürger sollen die Möglichkeit haben, mitzubestimmen und Probleme zu melden, damit die Gemeinde sie schneller lösen kann.
+
+- **Beliebtheit:** Es sollen bis zum 31. Oktober nächsten Jahres mindestens 15% der Einwohner aus Oberösterreich die Plattform nutzen.
+
+- **Probleme werden schneller bearbeitet:** die Bearbeitungszeit der Meldungen soll innerhalb des ersten Jahres nach Einführung um 20% reduziert werden (im Vergleich zum letzten Jahr)
+
+== 6. Projektbeschreibung
+=== Planung und Anforderungsanalyse
+ Unser Ziel dabei ist: Klarheit über die Bedürfnisse der Nutzer und Anforderungen an die Plattform schaffen.
+
+==== Zielgruppenanalyse, Festlegung der Funktionen, Erstellung eines Lastenhefts
+** Am Anfang schauen wir uns genau an, wer die Plattform später nutzt. Wir überlegen, was die Bürger und die Stadtverwaltung brauchen und was sie erwarten, damit alles gut funktioniert.
+** Wir entscheiden, welche Hauptfunktionen die Plattform haben soll – also zum Beispiel: Probleme melden, Fotos hochladen, den Standort markieren und den Status verfolgen. Außerdem legen wir fest, welche Technik gebraucht wird, damit alles auf verschiedenen Geräten gut läuft.
+** In diesem Schritt sammeln wir alle Anforderungen, die die Plattform erfüllen muss. Das umfasst nicht nur Funktionen wie Benutzerfreundlichkeit oder Sicherheit, sondern auch Dinge wie Barrierefreiheit.
+
+=== Design
+ Unser Ziel dabei ist: Ein benutzerfreundliches, ansprechendes und funktionales Design für die Plattform entwickeln.
+
+==== Wireframes, UI/UX-Design, Interaktiven Prototyp
+** Zu Beginn machen wir erstmal grobe Skizzen (Wireframes), um zu zeigen, wie die Struktur und Navigation der Plattform aussehen sollen. Das hilft, die Nutzerführung klar und einfach zu gestalten und einen logischen Ablauf zu finden.
+** Nachdem die Struktur festgelegt ist, geht's an das Design. Dabei achten wir darauf, dass die Benutzeroberfläche einfach und intuitiv zu bedienen ist und gleichzeitig modern aussieht. Die Farben, Schriften und die Anordnung der Elemente werden so gewählt, dass sie gut zusammenpassen und die Plattform sowohl funktional als auch optisch ansprechend ist.
+** Wir erstellen einen interaktiven Prototypen, damit wir testen können, wie die Plattform funktioniert, bevor die eigentliche Entwicklung startet. So können wir frühzeitig Probleme erkennen und anpassen.
+
+=== Entwicklung der Plattform
+ Unser Ziel dabei ist: Die tatsächliche Umsetzung der Plattform mit allen definierten Funktionen.
+
+==== Wahl der Technologie, Backend & Frontend - Entwicklung, Integration der API
+
+=== Launch und Betrieb
+ Unser Ziel dabei ist: Die Plattform der Öffentlichkeit zugänglich machen und kontinuierlich verbessern.
+
+** Die Serverlogik wird entwickelt, um die Meldungen der Nutzer zu verarbeiten, zu speichern und die Kommunikation zwischen der Plattform und den zuständigen Behörden zu ermöglichen. Dazu gehört auch die Integration von Sicherheitsmechanismen, um Daten zu schützen.
+** Das Frontend wird auf Basis des Design-Prototyps entwickelt. Es enthält alle erforderlichen Funktionen wie die Möglichkeit, Probleme zu melden, Fotos hinzuzufügen, Standortdaten zu integrieren und den Bearbeitungsstatus der Meldungen zu verfolgen.
+** Wir bauen eine API, die das Frontend mit dem Backend verbindet. So stellen wir sicher, dass alle Daten richtig übertragen werden und der Status der Meldung immer aktuell ist.
+
+==== Öffentlichkeitsarbeit, Benutzerfeedback sammeln,
+ Unser Ziel dabei ist: Ziel: Die Plattform bekannt machen und stetig weiterentwickeln.
+
+** Nach dem Start holen wir uns Feedback von den Nutzern, um Schwächen zu erkennen und das System weiter zu verbessern.
+** Die Plattform wird ständig überwacht und bei Bedarf optimiert. Dazu gehört das Beheben von Fehlern, das Hinzufügen neuer Funktionen und das Anpassen an neue technische Entwicklungen.
+
+== 7. Meilensteine / Freigaben
+
+- Projektplanung (innerhalb von 1 Monat): Detaillierte Planung des technischen und funktionalen Umfangs.
+- Entwicklung der Website (innerhalb von 4-5 Monaten): Design und Programmierung der Website, Integration der Formularfunktion und Datenverwaltung
+- Testphase und Fehlerbehebung (innerhalb von 1 Monat): Funktionen der Plattform werden getestet, bewertet, vielleicht nochmal umgeändert etc.
+- Launch der Plattform: Veröffentlichung der Website.
+
+== 8. Projektstart
+Der Projektstart soll zu Beginn des Dezembers in Form eines Projekt-Start-up-Seminars erfolgen, bei dem alle Projektziele, Projektphasen und weitere Details besprochen werden.
+
+== 9. Projektende
+Das Projekt soll bis Juni 2025 fertig sein und mit der Abnahme der Projektergebnisse durch den Auftraggeber beendet werden. Danach soll eine Evaluierung der Projektziele stattfinden, was heißt, dass sich das Team nochmal anschaut, ob die Projektziele alle erfüllt wurden.
+
+== 12. Projektorganisation
+=== 12.1 Projektleitung
+Die Rolle der Projektleitung übernimmt Almina Silnovic, welche für die Planung, Durchführung und Kontrolle des Projekts verantwortlich ist, unterstützt von ihrer Stellvertreterin Azra Özdemir, welche diese Aufgaben im Falle der Abwesenheit übernimmt.
+
+Kontaktdaten:
+
+Projektleitung: Almina Silnovic +
+Telefon: +43 5263 5277 +
+E-Mail: alminasilnovic10@gmail.com +
+
+Stellvertretung: Azra Özdemir +
+Telefon: +43 5263 5277 +
+E-Mail: azraozdemir@icloud.com +
+
+=== 12.2 Projektteam
+Das Projektteam umfasst drei Software-Entwickler sowie einen Projektleiter und deren Stellvertretung.
