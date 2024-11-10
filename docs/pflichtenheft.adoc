@@ -4,9 +4,27 @@ Azra Özdemir | Almina Silnovic | Lejla Music
 {docdate}
 
 == 1. Beschreibung der Ausgangslage
+
 == 2. Ist-Zustand
+Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet.
+Diese Methode erschwert es den Bürgern ein Problem zu melden, wodurch sie generell die Motivation verlieren könnten, das Problem zu melden. Das führt dazu, dass sie unentdeckt bleiben und spät oder gar nicht gelöst werden.
+
 == 3. Zielsetzung
+
 == 4. Anforderungen (Soll)
 === 4.1 Anforderungen an die Applikationssoftware
+
+=== Meldung von Mängeln
+Nutzer sollen die Möglichkeit haben, Mängel über ein Formular zu melden, das eine Beschreibung, einen Standort (via GPS oder manuell) und ein Foto des Problems umfasst. Die Meldungen sollen kategoriesiert und herausgefiltert werden (z.B. Straßen, Beleuchtung, Müll; Entscheidung vom Benutzer). Außerdem ist eine Registrierung oder ein Login mit Email und Passwort möglich.
+
+=== Datenverwaltung
+Der Nutzer kann den Fortschritt der Meldung aktiv mitverfolgen. Er erhält automatische Benachrichtigungen per E-Mail bei Statusänderungen.
+Die Meldungen sollen automatisch an die zuständige Gemeinde mithilfe von Emails versendet werden. Die Verwaltung kann den Status der Meldung ändern und das Problem lösen.
+
+=== Benutzerfreundlichkeit
+Die Website soll ein ansprechendes Design und eine einfache Nutzung bieten, sodass auch Menschen, die nicht viel Ahnung von Technik haben, sie nutzen können.
+
 === 4.2 Anforderungen an die Systemplattform
+
+
 == 5. Mengengerüst

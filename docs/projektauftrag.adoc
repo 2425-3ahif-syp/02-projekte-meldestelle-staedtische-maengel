@@ -3,7 +3,8 @@
 Azra Özdemir | Almina Silnovic | Lejla Music
 {docdate}
 
-== 1. CityCare - digitale Meldestelle für städtische Mängel
+== 1. Projektbezeichnung
+=== CityCare - digitale Meldestelle für städtische Mängel
 
 In vielen Städten ist es für Bürger schwierig, lokale Probleme wie kaputte Straßen oder defekte Laternen zu melden. Unsere Plattform soll das ändern, indem sie es den Bürgern ermöglicht, solche Probleme einfach zu melden.
 
@@ -50,38 +51,33 @@ Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem wir
 
 == 6. Projektbeschreibung
 === Planung und Anforderungsanalyse
- Unser Ziel dabei ist: Klarheit über die Bedürfnisse der Nutzer und Anforderungen an die Plattform schaffen.
+Ziel: Klarheit über Nutzerbedürfnisse und Plattformanforderungen schaffen.
 
-==== Zielgruppenanalyse, Festlegung der Funktionen, Erstellung eines Lastenhefts
-** Am Anfang schauen wir uns genau an, wer die Plattform später nutzt. Wir überlegen, was die Bürger und die Stadtverwaltung brauchen und was sie erwarten, damit alles gut funktioniert.
-** Wir entscheiden, welche Hauptfunktionen die Plattform haben soll – also zum Beispiel: Probleme melden, Fotos hochladen, den Standort markieren und den Status verfolgen. Außerdem legen wir fest, welche Technik gebraucht wird, damit alles auf verschiedenen Geräten gut läuft.
-** In diesem Schritt sammeln wir alle Anforderungen, die die Plattform erfüllen muss. Das umfasst nicht nur Funktionen wie Benutzerfreundlichkeit oder Sicherheit, sondern auch Dinge wie Barrierefreiheit.
+==== Zielgruppenanalyse, Funktionen festlegen, Lastenheft erstellen
+* Zu Beginn analysieren wir die Bedürfnisse der Bürger und Stadtverwaltung. Wir definieren die Hauptfunktionen der Plattform (z. B. Probleme melden, Fotos hochladen, Standort markieren, Status verfolgen) und die erforderliche Technik.
+* Anschließend werden alle Anforderungen (z. B. Benutzerfreundlichkeit, Sicherheit, Barrierefreiheit) gesammelt.
 
 === Design
- Unser Ziel dabei ist: Ein benutzerfreundliches, ansprechendes und funktionales Design für die Plattform entwickeln.
+Ziel: Ein benutzerfreundliches, funktionales Design entwickeln.
 
-==== Wireframes, UI/UX-Design, Interaktiven Prototyp
-** Zu Beginn machen wir erstmal grobe Skizzen (Wireframes), um zu zeigen, wie die Struktur und Navigation der Plattform aussehen sollen. Das hilft, die Nutzerführung klar und einfach zu gestalten und einen logischen Ablauf zu finden.
-** Nachdem die Struktur festgelegt ist, geht's an das Design. Dabei achten wir darauf, dass die Benutzeroberfläche einfach und intuitiv zu bedienen ist und gleichzeitig modern aussieht. Die Farben, Schriften und die Anordnung der Elemente werden so gewählt, dass sie gut zusammenpassen und die Plattform sowohl funktional als auch optisch ansprechend ist.
-** Wir erstellen einen interaktiven Prototypen, damit wir testen können, wie die Plattform funktioniert, bevor die eigentliche Entwicklung startet. So können wir frühzeitig Probleme erkennen und anpassen.
+==== Wireframes, UI/UX-Design, Prototyp
+* Zu Beginn erstellen wir Skizzen der Struktur und Navigation.
+* Danach gestalten wir eine benutzerfreundliche, moderne Oberfläche.
+* Ein interaktiver Prototyp hilft, die Funktionalität vor der Entwicklung zu testen und Probleme frühzeitig zu erkennen.
 
 === Entwicklung der Plattform
- Unser Ziel dabei ist: Die tatsächliche Umsetzung der Plattform mit allen definierten Funktionen.
+Ziel: Umsetzung der definierten Funktionen.
 
-==== Wahl der Technologie, Backend & Frontend - Entwicklung, Integration der API
+==== Technologiewahl, Backend- & Frontend-Entwicklung, API-Integration
+* Wir entwickeln die Serverlogik zur Meldungsbearbeitung und Kommunikation mit Behörden.
+* Das Frontend wird basierend auf dem Design-Prototypen erstellt, und eine API sorgt für die Datenübertragung zwischen Frontend und Backend.
 
 === Launch und Betrieb
- Unser Ziel dabei ist: Die Plattform der Öffentlichkeit zugänglich machen und kontinuierlich verbessern.
+Ziel: Plattform veröffentlichen und kontinuierlich verbessern.
 
-** Die Serverlogik wird entwickelt, um die Meldungen der Nutzer zu verarbeiten, zu speichern und die Kommunikation zwischen der Plattform und den zuständigen Behörden zu ermöglichen. Dazu gehört auch die Integration von Sicherheitsmechanismen, um Daten zu schützen.
-** Das Frontend wird auf Basis des Design-Prototyps entwickelt. Es enthält alle erforderlichen Funktionen wie die Möglichkeit, Probleme zu melden, Fotos hinzuzufügen, Standortdaten zu integrieren und den Bearbeitungsstatus der Meldungen zu verfolgen.
-** Wir bauen eine API, die das Frontend mit dem Backend verbindet. So stellen wir sicher, dass alle Daten richtig übertragen werden und der Status der Meldung immer aktuell ist.
-
-==== Öffentlichkeitsarbeit, Benutzerfeedback sammeln,
- Unser Ziel dabei ist: Ziel: Die Plattform bekannt machen und stetig weiterentwickeln.
-
-** Nach dem Start holen wir uns Feedback von den Nutzern, um Schwächen zu erkennen und das System weiter zu verbessern.
-** Die Plattform wird ständig überwacht und bei Bedarf optimiert. Dazu gehört das Beheben von Fehlern, das Hinzufügen neuer Funktionen und das Anpassen an neue technische Entwicklungen.
+=== Öffentlichkeitsarbeit, Feedback sammeln, ständige Optimierung
+* Nach dem Launch holen wir Nutzerfeedback ein, um Schwächen zu erkennen und die Plattform zu optimieren.
+* Fehler werden behoben, neue Funktionen hinzugefügt und Anpassungen an technische Entwicklungen vorgenommen.
 
 == 7. Meilensteine / Freigaben
 
