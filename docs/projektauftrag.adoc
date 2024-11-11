@@ -1,3 +1,4 @@
+:doctype: book
 = Projektauftrag
 
 Azra Özdemir | Almina Silnovic | Lejla Music
@@ -37,10 +38,10 @@ Unser Projekt entstand, weil wir gemerkt haben, dass in vielen Städten kleine, 
 ** Wir möchten unser Projekt in Form einer Website anbieten. Sie muss folgende Funktionen bieten: Problembeschreibung (Worum geht es? Was ist das Problem?), Foto-Upload, Standortangabe (Welche Gemeinde?) und Statusverfolgung (Ist das Problem schon behoben?). Das Projekt soll zudem benutzerfreundlich gestaltet sein.
 
 ===== Bis Wann?
-** Das Website soll ungefähr innerhalb 9 Monate fertig werden.
+** Das Website soll ungefähr innerhalb in 9 Monate fertig werden.
 
 ===== Wie gut?
-** Die Website muss fehlerfrei laufen können und effizient sein, was heißt, dass zum Beispiel der Foto Upload schnell funktioniert. Die Website muss auf allen Browsern und unabhängig vom Gerät (Handy, Laptop) aufrufbar sein.
+** Die Website muss fehlerfrei laufen können und effizient sein, in dem Sinne heißt es, dass das uploaden der Bilder schnell verlaufen muss. Die Website muss ebenfalls auf allen Browsern und unabhängig vom Gerät (Handy, Laptop) aufrufbar sein.
 
 == 5. Projektziele
 Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem wir die Kommunikation zwischen Bürgern und der Stadtverwaltung vereinfachen. Die Bürger sollen die Möglichkeit haben, mitzubestimmen und Probleme zu melden, damit die Gemeinde sie schneller lösen kann.
@@ -105,6 +106,12 @@ E-Mail: alminasilnovic10@gmail.com +
 Stellvertretung: Azra Özdemir +
 Telefon: +43 5263 5277 +
 E-Mail: azraozdemir@icloud.com +
+
+Stellvertretung: Lejla Music +
+Telefon: +43 0000 0000 +
+E-Mail: lejlamusic2409@gmail.com
+
+//Das sind falsche Nummern, bitte nicht anrufen!!
 
 === 12.2 Projektteam
 Das Projektteam umfasst drei Software-Entwickler sowie einen Projektleiter und deren Stellvertretung.

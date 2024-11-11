@@ -1,30 +1,44 @@
+:doctype: book
 = Pflichtenheft
 
 Azra Özdemir | Almina Silnovic | Lejla Music
 {docdate}
 
-== 1. Beschreibung der Ausgangslage
-
-== 2. Ist-Zustand
+= Beschreibung der Ausgangslage
+---
+== 1. Ist-Zustand
 Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet.
 Diese Methode erschwert es den Bürgern ein Problem zu melden, wodurch sie generell die Motivation verlieren könnten, das Problem zu melden. Das führt dazu, dass sie unentdeckt bleiben und spät oder gar nicht gelöst werden.
 
-== 3. Zielsetzung
+== 2. Zielsetzung
+Unser Ziel ist es eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um das Problem schnellstmöglich zu lösen. Die Plattform soll benutzerfreundlich und einfach zu bedienen sein.
 
-== 4. Anforderungen (Soll)
-=== 4.1 Anforderungen an die Applikationssoftware
+== 3. Anforderungen (Soll)
+=== 3.1 Anforderungen an die Applikationssoftware
 
 === Meldung von Mängeln
 Nutzer sollen die Möglichkeit haben, Mängel über ein Formular zu melden, das eine Beschreibung, einen Standort (via GPS oder manuell) und ein Foto des Problems umfasst. Die Meldungen sollen kategoriesiert und herausgefiltert werden (z.B. Straßen, Beleuchtung, Müll; Entscheidung vom Benutzer). Außerdem ist eine Registrierung oder ein Login mit Email und Passwort möglich.
 
 === Datenverwaltung
-Der Nutzer kann den Fortschritt der Meldung aktiv mitverfolgen. Er erhält automatische Benachrichtigungen per E-Mail bei Statusänderungen.
+Der Nutzer kann den Fortschritt der Meldung aktiv mitverfolgen. Der Benutzer erhält automatische Benachrichtigungen per E-Mail bei Statusänderungen.
 Die Meldungen sollen automatisch an die zuständige Gemeinde mithilfe von Emails versendet werden. Die Verwaltung kann den Status der Meldung ändern und das Problem lösen.
 
 === Benutzerfreundlichkeit
 Die Website soll ein ansprechendes Design und eine einfache Nutzung bieten, sodass auch Menschen, die nicht viel Ahnung von Technik haben, sie nutzen können.
 
-=== 4.2 Anforderungen an die Systemplattform
+=== 3.2 Anforderungen an die Systemplattform
 
+=== Technische Anforderungen
 
-== 5. Mengengerüst
+==== Webserver
+Die Website soll auf einem Webserver gehostet werden (oder in unserem Fall, über Github Pages) , der die Anforderungen an die Sicherheit und Performance erfüllt.
+
+==== Datenbank
+Die Meldungen sollen in einer Datenbank gespeichert werden, um sie später abrufen zu können. Die Datenbank muss sicher und zuverlässig aufgesetzt werden.
+
+== 4. Mengengerüst
+=== 4.1 Anzahl der Benutzer
+Es wird erwartet, dass 15% Benutzer die Plattform nutzen werden. Wir gehen davon aus, dass die meisten Benutzer aus Oberösterreich kommen werden.
+
+=== 4.2 Anzahl der Meldungen
+Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.
