@@ -1,6 +1,5 @@
-= Some Slide
-:author: firstname lastname
-:email: x.y@htl.at
+= Meldestelle für städtische Mängel
+:author: Silnovic Almina, Music Lejla, Özdemir Azra
 :revnumber: 1.0
 :revdate: {docdate}
 :revremark: SLIDEDEMO @ HTL Leonding
@@ -33,10 +32,11 @@ endif::[]
 :title-slide-transition: zoom
 :title-slide-transition-speed: fast
 
-Testing filter by changing documentation file
+eine Plattform auf der man Mängel melden kann.
 
-== Slide 2
+== Links
 
-* Topic 1
-* Topic 2
-* Topic 3
+
+* link:https://github.com/2425-3ahif-syp/02-projekte-meldestelle-staedtische-maengel/blob/main/asciidocs/docs/pflichtenheft.adoc[**Pflichtenheft**^]
+* link:https://github.com/2425-3ahif-syp/02-projekte-meldestelle-staedtische-maengel/blob/main/asciidocs/docs/projektauftrag.adoc[**Projektauftrag**^]
+* link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[**YouTrack**^]
