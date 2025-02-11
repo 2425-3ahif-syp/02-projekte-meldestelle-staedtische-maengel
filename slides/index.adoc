@@ -36,7 +36,6 @@ eine Plattform auf der man Mängel melden kann.
 
 == Links
 
-
 * link:https://github.com/2425-3ahif-syp/02-projekte-meldestelle-staedtische-maengel/blob/main/asciidocs/docs/pflichtenheft.adoc[**Pflichtenheft**^]
 * link:https://github.com/2425-3ahif-syp/02-projekte-meldestelle-staedtische-maengel/blob/main/asciidocs/docs/projektauftrag.adoc[**Projektauftrag**^]
 * link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[**YouTrack**^]
