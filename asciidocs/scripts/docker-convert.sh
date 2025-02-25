@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 
 inputPath="$1"
+createSlides="$2"
 source $inputPath/scripts/docker-convert-util.sh
 ASCIIDOCTOR_VERSION="1.58"
 
 echo "input => $inputPath"
+echo "createSlides => $createSlides"
 echo building html
 
-convertFilesToSlides "$inputPath" $ASCIIDOCTOR_VERSION
+if [ $createSlides = true ]; then
+    convertFilesToSlides "$inputPath" $ASCIIDOCTOR_VERSION
+fi
+
+#inputPath="$inputPath"
 
 convertFilesToHTML "$inputPath" $ASCIIDOCTOR_VERSION
 
-find $inputPath -depth -name "*.adoc" -print
-find $inputPath -depth -name "*.adoc" -delete
+# set permissions of output folder to the same as the input folder - fixes #1
+#if [ -d "$inputPath" ] && [ -d "$outputPath" ]; then
+#    chown $(stat "$inputPath" -c %u:%g) "$outputPath" -R
+#fi
