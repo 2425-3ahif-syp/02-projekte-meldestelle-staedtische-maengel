@@ -10,8 +10,8 @@ convertFilesToSlides() {
   downloadReveal $buildPath
 
   docker run --rm \
-    -v ${PWD}/$buildPath/slides:/documents \
-    asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor-revealjs \
+         -v ${PWD}/$buildPath/slides:/documents \
+         asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor-revealjs \
          -r asciidoctor-diagram \
          -a icons=font \
          -a revealjs_theme=league@ \
@@ -24,9 +24,6 @@ convertFilesToSlides() {
          -a sourcedir=src/main/java@ \
          -b revealjs \
          '**/*.adoc'"
-
-  mv $buildPath/slides/* $buildPath
-  rmdir $buildPath/slides
 }
 
 downloadReveal() {
@@ -40,16 +37,18 @@ downloadReveal() {
   rm revealjs.zip
 }
 
+
+
 convertFilesToHTML() {
-  buildPath=$1
-  asciidoctorVersion=$2
+    buildPath=$1
+    asciidoctorVersion=$2
 
-  echo "=== compiling HTML - docs  ==="
-  echo $buildPath
+    echo "=== compiling HTML - docs  ==="
+    echo $buildPath
 
-  docker run --rm \
-    -v ${PWD}/$buildPath/docs:/documents \
-    asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor \
+    docker run --rm \
+      -v ${PWD}/$buildPath/docs:/documents \
+      asciidoctor/docker-asciidoctor:$asciidoctorVersion /bin/bash -c "asciidoctor \
       -r asciidoctor-diagram \
       -a icons=font \
       -a experimental=true \
@@ -67,6 +66,14 @@ convertFilesToHTML() {
       -b html5 \
       '**/*.adoc'"
 
-  mv $buildPath/docs/pflichtenheft/pflichtenheft.html $buildPath/docs/pflichtenheft/index.html
-  mv $buildPath/docs/projektauftrag/projektauftrag.html $buildPath/docs/projektauftrag/index.html
+      mv $buildPath/docs/* $buildPath
+      rmdir $buildPath/docs
+      # rm -f -v $buildPath/**/*.adoc
+      #echo $buildPath/**/*.adoc
+      find $buildPath -depth -name "*.adoc" -print
+      find $buildPath -depth -name "*.adoc" -delete
+
+    #docker run --rm \
+    #  -v ${PWD}/$buildPath:/documents \
+    #  asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "tree && ls -lh"
 }
