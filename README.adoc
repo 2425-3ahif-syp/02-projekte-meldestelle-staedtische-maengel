@@ -1,10 +1,32 @@
-= Meldestelle für städtische Mängel
+# CityCare - Digitale Meldestelle für städtische Mängel
 
-== Links
-link:./asciidocs/docs/projektauftrag.adoc[Projektauftrag] +
-link:./asciidocs/docs/pflichtenheft.adoc[Pflichtenheft]
+## Über das Projekt
+CityCare ist eine Webplattform, die es Bürgern ermöglicht, städtische Mängel wie kaputte Straßen, defekte Laternen oder Vandalismus einfach und schnell zu melden. Die Plattform erleichtert die Kommunikation mit der Stadtverwaltung und trägt dazu bei, Probleme effizienter zu lösen.
 
-== Teammitglieder
-* Almina Silnovic
-* Azra Özdemir
-* Lejla Music
+## Funktionen
+- **Problemmeldung:** Nutzer können Mängel in ihrer Stadt melden.
+- **Foto-Upload:** Bilder können zur besseren Veranschaulichung hochgeladen werden.
+- **Standortangabe:** Die gemeldeten Probleme werden mit Standortdaten versehen.
+- **Statusverfolgung:** Nutzer können sehen, ob ein gemeldetes Problem bereits bearbeitet wird oder gelöst wurde.
+- **Benutzerfreundlichkeit:** Die Plattform ist intuitiv bedienbar und geräteunabhängig nutzbar.
+
+## Ziel des Projekts
+Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem Probleme schneller erkannt und behoben werden. Dadurch wird die Stadtverwaltung entlastet und die Zufriedenheit der Einwohner gesteigert.
+
+## Projektteam
+- **Almina Silnovic** (Projektleitung) - alminasilnovic10@gmail.com
+- **Azra Özdemir** (Stellvertretung) - azraozdemir@icloud.com
+- **Lejla Music** (Stellvertretung) - lejlamusic2409@gmail.com
+
+## Meilensteine
+1. **Projektplanung (1 Monat)** - Festlegung der Anforderungen und technischen Umsetzung.
+2. **Entwicklung der Plattform (4-5 Monate)** - Design und Implementierung der Hauptfunktionen.
+3. **Testphase & Optimierung (1 Monat)** - Fehlerbehebung und Verbesserung der Plattform.
+4. **Launch der Plattform** - Veröffentlichung und fortlaufende Weiterentwicklung.
+
+## Zeitplan
+Das Projekt begann im Dezember 2024 und soll bis Juni 2025 abgeschlossen sein.
+
+## Kontakt
+Falls Sie Fragen oder Anregungen haben, können Sie uns gerne kontaktieren.
+
