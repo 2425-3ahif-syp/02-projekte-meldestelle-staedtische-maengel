@@ -1,4 +1,38 @@
-= Index page
-ifndef::imagesdir[:imagesdir: images]
+= Meldestelle für städtische Mängel
 
-image::img.png[]
+== Problemstellung
+
+Die Meldung städtischer Mängel erfolgt oft über umständliche Wege (Telefon, E-Mail), was zu:
+
+* Verzögerter Bearbeitung von Problemen
+* Mangelnder Transparenz für Bürger
+* Ineffizienter Verwaltung der Meldungen
+
+== Aufgabenstellung
+
+Eine digitale Plattform soll entwickelt werden, die:
+
+* Einfache Erfassung von Mängeln mit Foto und Standort ermöglicht
+* Den Bearbeitungsstatus transparent macht
+* Die Verwaltung und Bearbeitung der Meldungen optimiert
+
+== Aktivitätsdiagramm
+[plantuml]
+----
+@startuml
+start
+
+:Benutzer meldet Mangel;
+if (Ist der Mangel korrekt?) then (ja)
+  :Mangel wird erfasst;
+  :Benachrichtigung an zuständige Stelle;
+  :Meldung wird bearbeitet;
+  :Status wird aktualisiert;
+else (nein)
+  :Fehlermeldung an Benutzer;
+  stop
+endif
+
+stop
+@enduml
+----

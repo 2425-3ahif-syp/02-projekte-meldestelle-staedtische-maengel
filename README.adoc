@@ -1,0 +1,10 @@
+= Meldestelle für städtische Mängel
+
+== Links
+link:./asciidocs/docs/projektauftrag.adoc[Projektauftrag] +
+link:./asciidocs/docs/pflichtenheft.adoc[Pflichtenheft]
+
+== Teammitglieder
+* Almina Silnovic
+* Azra Özdemir
+* Lejla Music
