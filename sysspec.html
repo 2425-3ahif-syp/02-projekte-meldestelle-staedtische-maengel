@@ -5,8 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="author" content="firstname lastname">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>Pflichtenheft</title>
+<title>My Project</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -444,32 +445,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
     }
 </style>
 </head>
-<body class="book toc2 toc-left">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Pflichtenheft</h1>
+<h1>My Project</h1>
+<div class="details">
+<span id="author" class="author">firstname lastname</span><br>
+<span id="revnumber">version 1.0.0,</span>
+<span id="revdate">2025-03-02</span>
+<br><span id="revremark">Some notes</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel0">
-<li><a href="#_beschreibung_der_ausgangslage">Beschreibung der Ausgangslage</a>
 <ul class="sectlevel1">
-<li><a href="#_1_ist_zustand">1. 1. Ist-Zustand</a></li>
-<li><a href="#_2_zielsetzung">2. 2. Zielsetzung</a></li>
-<li><a href="#_3_anforderungen_soll">3. 3. Anforderungen (Soll)</a>
+<li><a href="#_pflichtenheft_was_mache_ich">1. Pflichtenheft "Was mache ich"</a>
 <ul class="sectlevel2">
-<li><a href="#_3_1_anforderungen_an_die_applikationssoftware">3.1. 3.1 Anforderungen an die Applikationssoftware</a></li>
-<li><a href="#_meldung_von_mängeln">3.2. Meldung von Mängeln</a></li>
-<li><a href="#_datenverwaltung">3.3. Datenverwaltung</a></li>
-<li><a href="#_benutzerfreundlichkeit">3.4. Benutzerfreundlichkeit</a></li>
-<li><a href="#_3_2_anforderungen_an_die_systemplattform">3.5. 3.2 Anforderungen an die Systemplattform</a></li>
-<li><a href="#_technische_anforderungen">3.6. Technische Anforderungen</a></li>
+<li><a href="#_ausgangssituation">1.1. Ausgangssituation</a></li>
+<li><a href="#_istzustand">1.2. Istzustand</a></li>
+<li><a href="#_problemstellung">1.3. Problemstellung</a></li>
+<li><a href="#_aufgabenstellung">1.4. Aufgabenstellung</a></li>
+<li><a href="#_ziele">1.5. Ziele</a></li>
+<li><a href="#_mengengerüst">1.6. Mengengerüst</a></li>
+<li><a href="#_rahmenbedingungen">1.7. Rahmenbedingungen</a></li>
 </ul>
 </li>
-<li><a href="#_4_mengengerüst">4. 4. Mengengerüst</a>
+<li><a href="#_entwurf_wie_mache_ich_es">2. Entwurf "Wie mache ich es"</a>
 <ul class="sectlevel2">
-<li><a href="#_4_1_anzahl_der_benutzer">4.1. 4.1 Anzahl der Benutzer</a></li>
-<li><a href="#_4_2_anzahl_der_meldungen">4.2. 4.2 Anzahl der Meldungen</a></li>
+<li><a href="#_systemarchitektur">2.1. Systemarchitektur</a></li>
+<li><a href="#">2.2. &#8230;&#8203;</a></li>
 </ul>
 </li>
+<li><a href="#_projekthandbuch_organisatorische_rahmenbedingungen">3. Projekthandbuch "Organisatorische Rahmenbedingungen"</a>
+<ul class="sectlevel2">
+<li><a href="#_gantt_diagramm">3.1. GANTT-Diagramm</a></li>
 </ul>
 </li>
 </ul>
@@ -479,94 +486,99 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Azra Özdemir | Almina Silnovic | Lejla Music
-2025-03-02</p>
+<p><span class="icon"><a class="image" href="https://raw.githubusercontent.com/htl-leonding-college/asciidoctor-docker-template/master/asciidocs/sysspec.adoc"><i class="fa fa-file-text-o"></i></a></span> ‏ ‏ ‎
+<span class="icon"><a class="image" href="https://github.com/htl-leonding-college/asciidoctor-docker-template"><i class="fa fa-github-square"></i></a></span> ‏ ‏ ‎
+<span class="icon"><a class="image" href="https://htl-leonding.github.io/"><i class="fa fa-home"></i></a></span></p>
 </div>
 </div>
 </div>
-<h1 id="_beschreibung_der_ausgangslage" class="sect0"><a class="anchor" href="#_beschreibung_der_ausgangslage"></a>Beschreibung der Ausgangslage</h1>
-<div class="openblock partintro">
+<div class="sect1">
+<h2 id="_pflichtenheft_was_mache_ich"><a class="anchor" href="#_pflichtenheft_was_mache_ich"></a>1. Pflichtenheft "Was mache ich"</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ausgangssituation"><a class="anchor" href="#_ausgangssituation"></a>1.1. Ausgangssituation</h3>
+<div class="paragraph">
+<p>Die HTL Leonding ist eine HTL im oö. Zentralraum mit ca. 1000 Schülern und den Fachabteilungen Medientechnik, Informatik, &#8230;&#8203;.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_istzustand"><a class="anchor" href="#_istzustand"></a>1.2. Istzustand</h3>
+<div class="listingblock">
 <div class="content">
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_1_ist_zustand"><a class="anchor" href="#_1_ist_zustand"></a>1. 1. Ist-Zustand</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet.
-Diese Methode erschwert es den Bürgern ein Problem zu melden, wodurch sie generell die Motivation verlieren könnten, das Problem zu melden. Das führt dazu, dass sie unentdeckt bleiben und spät oder gar nicht gelöst werden.</p>
+<pre>Beschreibung der speziellen Situation zB in der Abteilung</pre>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_2_zielsetzung"><a class="anchor" href="#_2_zielsetzung"></a>2. 2. Zielsetzung</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Unser Ziel ist es eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um das Problem schnellstmöglich zu lösen. Die Plattform soll benutzerfreundlich und einfach zu bedienen sein.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_3_anforderungen_soll"><a class="anchor" href="#_3_anforderungen_soll"></a>3. 3. Anforderungen (Soll)</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_3_1_anforderungen_an_die_applikationssoftware"><a class="anchor" href="#_3_1_anforderungen_an_die_applikationssoftware"></a>3.1. 3.1 Anforderungen an die Applikationssoftware</h3>
+<h3 id="_problemstellung"><a class="anchor" href="#_problemstellung"></a>1.3. Problemstellung</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_meldung_von_mängeln"><a class="anchor" href="#_meldung_von_mängeln"></a>3.2. Meldung von Mängeln</h3>
-<div class="paragraph">
-<p>Nutzer sollen die Möglichkeit haben, Mängel über ein Formular zu melden, das eine Beschreibung, einen Standort (via GPS oder manuell) und ein Foto des Problems umfasst. Die Meldungen sollen kategoriesiert und herausgefiltert werden (z.B. Straßen, Beleuchtung, Müll; Entscheidung vom Benutzer). Außerdem ist eine Registrierung oder ein Login mit Email und Passwort möglich.</p>
+<h3 id="_aufgabenstellung"><a class="anchor" href="#_aufgabenstellung"></a>1.4. Aufgabenstellung</h3>
+<div class="sect3">
+<h4 id="_funktionale_anforderungen"><a class="anchor" href="#_funktionale_anforderungen"></a>1.4.1. Funktionale Anforderungen</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/wireframe.png" alt="wireframe" width="376" height="84">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_nichtfunktionale_anforderungen_nfa"><a class="anchor" href="#_nichtfunktionale_anforderungen_nfa"></a>1.4.2. Nichtfunktionale Anforderungen (NFA)</h4>
+
 </div>
 </div>
 <div class="sect2">
-<h3 id="_datenverwaltung"><a class="anchor" href="#_datenverwaltung"></a>3.3. Datenverwaltung</h3>
-<div class="paragraph">
-<p>Der Nutzer kann den Fortschritt der Meldung aktiv mitverfolgen. Der Benutzer erhält automatische Benachrichtigungen per E-Mail bei Statusänderungen.
-Die Meldungen sollen automatisch an die zuständige Gemeinde mithilfe von Emails versendet werden. Die Verwaltung kann den Status der Meldung ändern und das Problem lösen.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_benutzerfreundlichkeit"><a class="anchor" href="#_benutzerfreundlichkeit"></a>3.4. Benutzerfreundlichkeit</h3>
-<div class="paragraph">
-<p>Die Website soll ein ansprechendes Design und eine einfache Nutzung bieten, sodass auch Menschen, die nicht viel Ahnung von Technik haben, sie nutzen können.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_3_2_anforderungen_an_die_systemplattform"><a class="anchor" href="#_3_2_anforderungen_an_die_systemplattform"></a>3.5. 3.2 Anforderungen an die Systemplattform</h3>
+<h3 id="_ziele"><a class="anchor" href="#_ziele"></a>1.5. Ziele</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_technische_anforderungen"><a class="anchor" href="#_technische_anforderungen"></a>3.6. Technische Anforderungen</h3>
-<div class="sect3">
-<h4 id="_webserver"><a class="anchor" href="#_webserver"></a>3.6.1. Webserver</h4>
+<h3 id="_mengengerüst"><a class="anchor" href="#_mengengerüst"></a>1.6. Mengengerüst</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_rahmenbedingungen"><a class="anchor" href="#_rahmenbedingungen"></a>1.7. Rahmenbedingungen</h3>
 <div class="paragraph">
-<p>Die Website soll auf einem Webserver gehostet werden (oder in unserem Fall, über Github Pages) , der die Anforderungen an die Sicherheit und Performance erfüllt.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_datenbank"><a class="anchor" href="#_datenbank"></a>3.6.2. Datenbank</h4>
-<div class="paragraph">
-<p>Die Meldungen sollen in einer Datenbank gespeichert werden, um sie später abrufen zu können. Die Datenbank muss sicher und zuverlässig aufgesetzt werden.</p>
-</div>
+<p>zB Vorgaben vom Auftraggeber</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_4_mengengerüst"><a class="anchor" href="#_4_mengengerüst"></a>4. 4. Mengengerüst</h2>
+<h2 id="_entwurf_wie_mache_ich_es"><a class="anchor" href="#_entwurf_wie_mache_ich_es"></a>2. Entwurf "Wie mache ich es"</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_4_1_anzahl_der_benutzer"><a class="anchor" href="#_4_1_anzahl_der_benutzer"></a>4.1. 4.1 Anzahl der Benutzer</h3>
-<div class="paragraph">
-<p>Es wird erwartet, dass 15% Benutzer die Plattform nutzen werden. Wir gehen davon aus, dass die meisten Benutzer aus Oberösterreich kommen werden.</p>
-</div>
+<h3 id="_systemarchitektur"><a class="anchor" href="#_systemarchitektur"></a>2.1. Systemarchitektur</h3>
+
 </div>
 <div class="sect2">
-<h3 id="_4_2_anzahl_der_meldungen"><a class="anchor" href="#_4_2_anzahl_der_meldungen"></a>4.2. 4.2 Anzahl der Meldungen</h3>
+<h3 id=""><a class="anchor" href="#"></a>2.2. &#8230;&#8203;</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_projekthandbuch_organisatorische_rahmenbedingungen"><a class="anchor" href="#_projekthandbuch_organisatorische_rahmenbedingungen"></a>3. Projekthandbuch "Organisatorische Rahmenbedingungen"</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_gantt_diagramm"><a class="anchor" href="#_gantt_diagramm"></a>3.1. GANTT-Diagramm</h3>
 <div class="paragraph">
-<p>Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.</p>
+<p>mit User-Stories (definiert in YouTrack)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/gantt-protoype.png" alt="gantt protoype" width="353" height="100">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="minutes-of-meeting.html">Protokollvorlage</a></p>
+</li>
+<li>
+<p><a href="demo.html">Demo</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -574,6 +586,7 @@ Die Meldungen sollen automatisch an die zuständige Gemeinde mithilfe von Emails
 </div>
 <div id="footer">
 <div id="footer-text">
+Version 1.0.0<br>
 Last updated 2025-03-02 19:55:04 UTC
 </div>
 </div>
