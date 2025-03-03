@@ -7,3 +7,4 @@ image::images/homepage.jpg[]
 == Anmeldung (Azra Özdemir)
 
 == Meldung erstellen (Lejla Music)
+image::images/Reportpage.jpg[]
