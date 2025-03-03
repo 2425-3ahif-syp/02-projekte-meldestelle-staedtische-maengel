@@ -24,6 +24,9 @@ convertFilesToSlides() {
          -a sourcedir=src/main/java@ \
          -b revealjs \
          '**/*.adoc'"
+
+  mv $buildPath/slides/* $buildPath
+  rmdir $buildPath/slides
 }
 
 downloadReveal() {
@@ -36,8 +39,6 @@ downloadReveal() {
   mv reveal.js-$REVEAL_VERSION ./$REVEAL_DIR/revealjs
   rm revealjs.zip
 }
-
-
 
 convertFilesToHTML() {
     buildPath=$1
@@ -66,14 +67,6 @@ convertFilesToHTML() {
       -b html5 \
       '**/*.adoc'"
 
-      mv $buildPath/docs/* $buildPath
-      rmdir $buildPath/docs
-      # rm -f -v $buildPath/**/*.adoc
-      #echo $buildPath/**/*.adoc
-      find $buildPath -depth -name "*.adoc" -print
-      find $buildPath -depth -name "*.adoc" -delete
-
-    #docker run --rm \
-    #  -v ${PWD}/$buildPath:/documents \
-    #  asciidoctor/docker-asciidoctor:1.58 /bin/bash -c "tree && ls -lh"
+      mv $buildPath/docs/pflichtenheft.html $buildPath/docs/index.html
+      mv $buildPath/docs/projektauftrag.html $buildPath/docs/index.html
 }
