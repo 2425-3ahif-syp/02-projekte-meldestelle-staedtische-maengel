@@ -6,7 +6,7 @@ image::images/homepage.jpg[]
 
 == Anmeldung (Azra Özdemir)
 
-image::images/anmeldung.jpg[]
+image::images/loginpage.jpg[]
 
 == Meldung erstellen (Lejla Music)
 
