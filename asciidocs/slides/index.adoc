@@ -1,6 +1,5 @@
 = Meldestelle für städtische Mängel
 :author: Almina Silnovic
-:email: x.y@htl.at
 :revnumber: 1.0
 :revdate: {docdate}
 :revremark: SLIDEDEMO @ HTL Leonding
@@ -69,3 +68,9 @@ endif
 stop
 @enduml
 ----
+
+== Link
+
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/pflichtenheft[**Pflichtenheft**^]
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/projektauftrag[**Projektauftrag**^]
+* link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[**YouTrack**^]
