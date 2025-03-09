@@ -67,3 +67,53 @@ endif
 stop
 @enduml
 ----
+
+== Klassendiagramm
+[plantuml]
+----
+@startuml
+class Maengelmeldung {
++int id
++String beschreibung
++String ort
++Date datumErstellt
++String status
++String foto
++aktualisiereStatus(status)
++fuegeKommentarHinzu(comment)
+}
+
+class Benutzer {
++int benutzerId
++String name
++String email
++String rolle
++registrieren()
++anmelden()
+}
+
+class Status {
++String statusName
++String statusBeschreibung
+}
+
+class Kommentar {
++int kommentarId
++String kommentarText
++Date datum
++Benutzer autor
+}
+
+Maengelmeldung --> Benutzer : erstellt von
+Maengelmeldung --> Status : hat Status
+Maengelmeldung --> Kommentar : hat Kommentare
+Kommentar --> Benutzer : verfasst von
+
+@enduml
+----
+
+== Links
+link:../asciidocs/docs/projektauftrag.adoc[Projektauftrag] +
+link:../asciidocs/docs/pflichtenheft.adoc[Pflichtenheft] +
+link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[Scrum Board] +
+link:../asciidocs/docs/gui.adoc[Wireframes]
