@@ -11,7 +11,13 @@ Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem Pro
 - **Azra Özdemir** (Stellvertretung, 3AHIF) - azraozdemir@icloud.com
 - **Lejla Music** (Projektmitglied, 3AHIF) - lejlamusic2409@gmail.com
 
+== User Stories
+1. **Als Bürger** möchte ich Mängel in meiner Gemeinde melden können, damit diese schnellstmöglich behoben werden.
+2. **Als Gemeinde** möchte ich die gemeldeten Mängel schnell einsehen, den Bearbeitungsstatus verfolgen und gezielt Maßnahmen ergreifen können.
+3. **Als Bürger** möchte ich den Status meiner Mängelmeldung verfolgen können, um zu wissen, wann und ob der Mangel bearbeitet wurde.
+
 == Links
 link:./asciidocs/docs/projektauftrag.adoc[Projektauftrag] +
-link:./asciidocs/docs/pflichtenheft.adoc[Pflichtenheft]
+link:./asciidocs/docs/pflichtenheft.adoc[Pflichtenheft] +
+link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[Scrum Board] +
 
