@@ -11,3 +11,6 @@ image::images/loginpage.jpg[]
 == Meldung erstellen (Lejla Music)
 
 image::images/Reportpage.jpg[]
+
+== Informationsarchitektur 
+image::images/information.jpeg[]
