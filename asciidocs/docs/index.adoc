@@ -1,6 +1,44 @@
 = Meldestelle für städtische Mängel
+:revnumber: 1.0
+:revdate: {docdate}
+:revremark: SLIDEDEMO @ HTL Leonding
+:encoding: utf-8
+:lang: de
+:doctype: article
+//:icons: font
+:customcss: css/presentation.css
+//:revealjs_customtheme: css/sky.css
+//:revealjs_customtheme: css/black.css
+:revealjs_width: 1408
+:revealjs_height: 792
+:source-highlighter: highlightjs
+//:revealjs_parallaxBackgroundImage: images/background-landscape-light-orange.jpg
+//:revealjs_parallaxBackgroundSize: 4936px 2092px
+//:highlightjs-theme: css/atom-one-light.css
+// we want local served font-awesome fonts
+:iconfont-remote!:
+:iconfont-name: fonts/fontawesome/css/all
+//:revealjs_parallaxBackgroundImage: background-landscape-light-orange.jpg
+//:revealjs_parallaxBackgroundSize: 4936px 2092px
+ifdef::env-ide[]
+:imagesdir: ../images
+endif::[]
+ifndef::env-ide[]
+:imagesdir: images
+endif::[]
+//:revealjs_theme: sky
+//:title-slide-background-image: img.png
+:title-slide-transition: zoom
+:title-slide-transition-speed: fast
 
-== Problemstellung
+== Pflichtenheft
+
+=== Beschreibung der Ausgangslage
+
+==== Ist-Zustand
+Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet. Diese Methode erschwert es den Bürgern, ein Problem zu melden, was die Motivation verringern kann. Mängel bleiben so oft unentdeckt oder werden zu spät oder gar nicht gelöst.
+
+==== Problemstellung
 
 Die Meldung städtischer Mängel erfolgt oft über umständliche Wege (Telefon, E-Mail), was zu:
 
@@ -8,31 +46,53 @@ Die Meldung städtischer Mängel erfolgt oft über umständliche Wege (Telefon, 
 * Mangelnder Transparenz für Bürger
 * Ineffizienter Verwaltung der Meldungen
 
-== Aufgabenstellung
+führt.
+
+==== Aufgabenstellung
 
 Eine digitale Plattform soll entwickelt werden, die:
 
 * Einfache Erfassung von Mängeln mit Foto und Standort ermöglicht
-* Den Bearbeitungsstatus transparent macht
-* Die Verwaltung und Bearbeitung der Meldungen optimiert
+* Den Bearbeitungsstatus erfasst
+* Die Verwaltung und Bearbeitung der Meldungen regelt
 
-== Aktivitätsdiagramm
-[plantuml]
-----
-@startuml
-start
+==== Zielsetzung
+Ziel ist es, eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um Probleme schnellstmöglich zu lösen. Die Plattform wird benutzerfreundlich und einfach zu bedienen sein.
 
-:Benutzer meldet Mangel;
-if (Ist der Mangel korrekt?) then (ja)
-  :Mangel wird erfasst;
-  :Benachrichtigung an zuständige Stelle;
-  :Meldung wird bearbeitet;
-  :Status wird aktualisiert;
-else (nein)
-  :Fehlermeldung an Benutzer;
-  stop
-endif
+== Anforderungen (Soll)
 
-stop
-@enduml
-----
+=== Funktionale Anforderungen
+
+===== Meldung von Mängeln
+- Nutzer können Mängel über ein Formular melden (Beschreibung, Standort via GPS oder manuell, Foto).
+- Meldungen werden kategorisiert (z.B. Straßen, Beleuchtung, Müll).
+- Möglichkeit zur Registrierung oder Login mit Email und Passwort.
+
+===== Datenverwaltung
+- Nutzer können den Fortschritt der Meldung verfolgen.
+- Automatische Benachrichtigungen per E-Mail bei Statusänderungen.
+- Meldungen werden automatisch an die zuständige Gemeinde weitergeleitet.
+- Verwaltung kann den Status der Meldung ändern und das Problem lösen.
+
+=== Nicht-funktionale Anforderungen
+
+===== Benutzerfreundlichkeit
+- Ansprechendes Design und einfache Nutzung, auch für technisch weniger versierte Nutzer.
+
+===== Technische Anforderungen
+- Webserver (z.B. über Github Pages) für Hosting, der Sicherheits- und Performanceanforderungen erfüllt.
+- Datenbank zur Speicherung der Meldungen, die sicher und zuverlässig aufgesetzt wird.
+
+=== Mengengerüst
+
+==== Anzahl der Benutzer
+- Erwartet wird, dass 15% der Benutzer die Plattform nutzen werden. Die meisten kommen vermutlich aus Oberösterreich.
+
+==== Anzahl der Meldungen
+- Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.
+
+== Links
+link:./projektauftrag.adoc[Projektauftrag] +
+link:./pflichtenheft.adoc[Pflichtenheft] +
+link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[Scrum Board] +
+link:./gui.adoc[Wireframes]
