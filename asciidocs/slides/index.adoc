@@ -59,9 +59,9 @@ Eine digitale Plattform soll entwickelt werden, die:
 ==== Zielsetzung
 Ziel ist es, eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um Probleme schnellstmöglich zu lösen. Die Plattform wird benutzerfreundlich und einfach zu bedienen sein.
 
-== Anforderungen (Soll)
+=== Anforderungen (Soll)
 
-=== Funktionale Anforderungen
+==== Funktionale Anforderungen
 
 ===== Meldung von Mängeln
 - Nutzer können Mängel über ein Formular melden (Beschreibung, Standort via GPS oder manuell, Foto).
@@ -74,7 +74,7 @@ Ziel ist es, eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Geme
 - Meldungen werden automatisch an die zuständige Gemeinde weitergeleitet.
 - Verwaltung kann den Status der Meldung ändern und das Problem lösen.
 
-=== Nicht-funktionale Anforderungen
+==== Nicht-funktionale Anforderungen
 
 ===== Benutzerfreundlichkeit
 - Ansprechendes Design und einfache Nutzung, auch für technisch weniger versierte Nutzer.
