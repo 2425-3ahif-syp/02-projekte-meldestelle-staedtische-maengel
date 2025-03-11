@@ -158,8 +158,6 @@ Kommentar --> Benutzer : verfasst von
 ----
 
 == Links
-
-== Links
 * link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/projektauftrag/projektauftrag.html[**Projektauftrag**^]
 * link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/pflichtenheft/pflichtenheft.html[**Pflichtenheft**^]
 * link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[**Scrum Board**^]
