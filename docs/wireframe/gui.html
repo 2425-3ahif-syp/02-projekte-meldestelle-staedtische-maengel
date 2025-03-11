@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>Meldestelle für städtische Mängel</title>
+<title>GUI</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -433,213 +433,65 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="./fonts/fontawesome/css/all.css">
-<style>
-    pre.rouge .hll {
-        background-color: #ffc;
-        display: block;
-    }
-    pre.rouge .hll * {
-        background-color: initial;
-    }
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Meldestelle für städtische Mängel</h1>
-<div class="details">
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">2025-03-11</span>
-<br><span id="revremark">SLIDEDEMO @ HTL Leonding</span>
-</div>
+<h1>GUI</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_pflichtenheft">1. Pflichtenheft</a>
-<ul class="sectlevel2">
-<li><a href="#_beschreibung_der_ausgangslage">1.1. Beschreibung der Ausgangslage</a></li>
-</ul>
-</li>
-<li><a href="#_anforderungen_soll">2. Anforderungen (Soll)</a>
-<ul class="sectlevel2">
-<li><a href="#_funktionale_anforderungen">2.1. Funktionale Anforderungen</a></li>
-<li><a href="#_nicht_funktionale_anforderungen">2.2. Nicht-funktionale Anforderungen</a></li>
-<li><a href="#_mengengerüst">2.3. Mengengerüst</a></li>
-</ul>
-</li>
-<li><a href="#_links">3. Links</a></li>
+<li><a href="#_startseite_almina_silnovic">1. Startseite (Almina Silnovic)</a></li>
+<li><a href="#_anmeldung_azra_özdemir">2. Anmeldung (Azra Özdemir)</a></li>
+<li><a href="#_meldung_erstellen_lejla_music">3. Meldung erstellen (Lejla Music)</a></li>
+<li><a href="#_informationsarchitektur">4. Informationsarchitektur</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_pflichtenheft"><a class="anchor" href="#_pflichtenheft"></a>1. Pflichtenheft</h2>
+<h2 id="_startseite_almina_silnovic"><a class="anchor" href="#_startseite_almina_silnovic"></a>1. Startseite (Almina Silnovic)</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_beschreibung_der_ausgangslage"><a class="anchor" href="#_beschreibung_der_ausgangslage"></a>1.1. Beschreibung der Ausgangslage</h3>
-<div class="sect3">
-<h4 id="_ist_zustand"><a class="anchor" href="#_ist_zustand"></a>1.1.1. Ist-Zustand</h4>
-<div class="paragraph">
-<p>Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet. Diese Methode erschwert es den Bürgern, ein Problem zu melden, was die Motivation verringern kann. Mängel bleiben so oft unentdeckt oder werden zu spät oder gar nicht gelöst.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_problemstellung"><a class="anchor" href="#_problemstellung"></a>1.1.2. Problemstellung</h4>
-<div class="paragraph">
-<p>Die Meldung städtischer Mängel erfolgt oft über umständliche Wege (Telefon, E-Mail), was zu:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Verzögerter Bearbeitung von Problemen</p>
-</li>
-<li>
-<p>Mangelnder Transparenz für Bürger</p>
-</li>
-<li>
-<p>Ineffizienter Verwaltung der Meldungen</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>führt.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_aufgabenstellung"><a class="anchor" href="#_aufgabenstellung"></a>1.1.3. Aufgabenstellung</h4>
-<div class="paragraph">
-<p>Eine digitale Plattform soll entwickelt werden, die:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Einfache Erfassung von Mängeln mit Foto und Standort ermöglicht</p>
-</li>
-<li>
-<p>Den Bearbeitungsstatus erfasst</p>
-</li>
-<li>
-<p>Die Verwaltung und Bearbeitung der Meldungen regelt</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_zielsetzung"><a class="anchor" href="#_zielsetzung"></a>1.1.4. Zielsetzung</h4>
-<div class="paragraph">
-<p>Ziel ist es, eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um Probleme schnellstmöglich zu lösen. Die Plattform wird benutzerfreundlich und einfach zu bedienen sein.</p>
-</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/images/homepage.jpg" alt="homepage">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_anforderungen_soll"><a class="anchor" href="#_anforderungen_soll"></a>2. Anforderungen (Soll)</h2>
+<h2 id="_anmeldung_azra_özdemir"><a class="anchor" href="#_anmeldung_azra_özdemir"></a>2. Anmeldung (Azra Özdemir)</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_funktionale_anforderungen"><a class="anchor" href="#_funktionale_anforderungen"></a>2.1. Funktionale Anforderungen</h3>
-<div class="sect4">
-<h5 id="_meldung_von_mängeln"><a class="anchor" href="#_meldung_von_mängeln"></a>Meldung von Mängeln</h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Nutzer können Mängel über ein Formular melden (Beschreibung, Standort via GPS oder manuell, Foto).</p>
-</li>
-<li>
-<p>Meldungen werden kategorisiert (z.B. Straßen, Beleuchtung, Müll).</p>
-</li>
-<li>
-<p>Möglichkeit zur Registrierung oder Login mit Email und Passwort.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_datenverwaltung"><a class="anchor" href="#_datenverwaltung"></a>Datenverwaltung</h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Nutzer können den Fortschritt der Meldung verfolgen.</p>
-</li>
-<li>
-<p>Automatische Benachrichtigungen per E-Mail bei Statusänderungen.</p>
-</li>
-<li>
-<p>Meldungen werden automatisch an die zuständige Gemeinde weitergeleitet.</p>
-</li>
-<li>
-<p>Verwaltung kann den Status der Meldung ändern und das Problem lösen.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_nicht_funktionale_anforderungen"><a class="anchor" href="#_nicht_funktionale_anforderungen"></a>2.2. Nicht-funktionale Anforderungen</h3>
-<div class="sect4">
-<h5 id="_benutzerfreundlichkeit"><a class="anchor" href="#_benutzerfreundlichkeit"></a>Benutzerfreundlichkeit</h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Ansprechendes Design und einfache Nutzung, auch für technisch weniger versierte Nutzer.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_technische_anforderungen"><a class="anchor" href="#_technische_anforderungen"></a>Technische Anforderungen</h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Webserver (z.B. über Github Pages) für Hosting, der Sicherheits- und Performanceanforderungen erfüllt.</p>
-</li>
-<li>
-<p>Datenbank zur Speicherung der Meldungen, die sicher und zuverlässig aufgesetzt wird.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_mengengerüst"><a class="anchor" href="#_mengengerüst"></a>2.3. Mengengerüst</h3>
-<div class="sect3">
-<h4 id="_anzahl_der_benutzer"><a class="anchor" href="#_anzahl_der_benutzer"></a>2.3.1. Anzahl der Benutzer</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Erwartet wird, dass 15% der Benutzer die Plattform nutzen werden. Die meisten kommen vermutlich aus Oberösterreich.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_anzahl_der_meldungen"><a class="anchor" href="#_anzahl_der_meldungen"></a>2.3.2. Anzahl der Meldungen</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.</p>
-</li>
-</ul>
-</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/images/loginpage.jpg" alt="loginpage">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_links"><a class="anchor" href="#_links"></a>3. Links</h2>
+<h2 id="_meldung_erstellen_lejla_music"><a class="anchor" href="#_meldung_erstellen_lejla_music"></a>3. Meldung erstellen (Lejla Music)</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><a href="./projektauftrag.adoc">Projektauftrag</a><br>
-<a href="./pflichtenheft.adoc">Pflichtenheft</a><br>
-<a href="https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc">Scrum Board</a><br>
-<a href="./gui.adoc">Wireframes</a></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/images/Reportpage.jpg" alt="Reportpage">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_informationsarchitektur"><a class="anchor" href="#_informationsarchitektur"></a>4. Informationsarchitektur</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/images/information.jpeg" alt="information">
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
 Last updated 2025-03-11 15:02:27 UTC
 </div>
 </div>

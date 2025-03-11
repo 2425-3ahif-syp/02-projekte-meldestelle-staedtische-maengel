@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>Meldestelle für städtische Mängel</title>
+<title>Pflichtenheft</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -433,58 +433,64 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="./fonts/fontawesome/css/all.css">
-<style>
-    pre.rouge .hll {
-        background-color: #ffc;
-        display: block;
-    }
-    pre.rouge .hll * {
-        background-color: initial;
-    }
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
-<h1>Meldestelle für städtische Mängel</h1>
-<div class="details">
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">2025-03-11</span>
-<br><span id="revremark">SLIDEDEMO @ HTL Leonding</span>
-</div>
+<h1>Pflichtenheft</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_beschreibung_der_ausgangslage">Beschreibung der Ausgangslage</a>
 <ul class="sectlevel1">
-<li><a href="#_pflichtenheft">1. Pflichtenheft</a>
+<li><a href="#_1_ist_zustand">1. 1. Ist-Zustand</a></li>
+<li><a href="#_2_problemstellung">2. 2. Problemstellung</a></li>
+<li><a href="#_3_aufgabenstellung">3. 3. Aufgabenstellung</a></li>
+<li><a href="#_4_zielsetzung">4. 4. Zielsetzung</a></li>
+<li><a href="#_5_anforderungen_soll">5. 5. Anforderungen (Soll)</a>
 <ul class="sectlevel2">
-<li><a href="#_beschreibung_der_ausgangslage">1.1. Beschreibung der Ausgangslage</a></li>
+<li><a href="#_5_1_funktionale_anforderungen">5.1. 5.1 Funktionale Anforderungen</a></li>
+<li><a href="#_5_2_nicht_funktionale_anforderungen">5.2. 5.2 Nicht-funktionale Anforderungen</a></li>
 </ul>
 </li>
-<li><a href="#_anforderungen_soll">2. Anforderungen (Soll)</a>
+<li><a href="#_6_mengengerüst">6. 6. Mengengerüst</a>
 <ul class="sectlevel2">
-<li><a href="#_funktionale_anforderungen">2.1. Funktionale Anforderungen</a></li>
-<li><a href="#_nicht_funktionale_anforderungen">2.2. Nicht-funktionale Anforderungen</a></li>
-<li><a href="#_mengengerüst">2.3. Mengengerüst</a></li>
+<li><a href="#_6_1_anzahl_der_benutzer">6.1. 6.1 Anzahl der Benutzer</a></li>
+<li><a href="#_6_2_anzahl_der_meldungen">6.2. 6.2 Anzahl der Meldungen</a></li>
 </ul>
 </li>
-<li><a href="#_links">3. Links</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_pflichtenheft"><a class="anchor" href="#_pflichtenheft"></a>1. Pflichtenheft</h2>
+<div id="preamble">
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_beschreibung_der_ausgangslage"><a class="anchor" href="#_beschreibung_der_ausgangslage"></a>1.1. Beschreibung der Ausgangslage</h3>
-<div class="sect3">
-<h4 id="_ist_zustand"><a class="anchor" href="#_ist_zustand"></a>1.1.1. Ist-Zustand</h4>
 <div class="paragraph">
-<p>Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet. Diese Methode erschwert es den Bürgern, ein Problem zu melden, was die Motivation verringern kann. Mängel bleiben so oft unentdeckt oder werden zu spät oder gar nicht gelöst.</p>
+<p>Azra Özdemir | Almina Silnovic | Lejla Music
+2025-03-11</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_problemstellung"><a class="anchor" href="#_problemstellung"></a>1.1.2. Problemstellung</h4>
+</div>
+<h1 id="_beschreibung_der_ausgangslage" class="sect0"><a class="anchor" href="#_beschreibung_der_ausgangslage"></a>Beschreibung der Ausgangslage</h1>
+<div class="openblock partintro">
+<div class="content">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_ist_zustand"><a class="anchor" href="#_1_ist_zustand"></a>1. 1. Ist-Zustand</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet.
+Diese Methode erschwert es den Bürgern ein Problem zu melden, wodurch sie generell die Motivation verlieren könnten, das Problem zu melden. Das führt dazu, dass sie unentdeckt bleiben und spät oder gar nicht gelöst werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_problemstellung"><a class="anchor" href="#_2_problemstellung"></a>2. 2. Problemstellung</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Die Meldung städtischer Mängel erfolgt oft über umständliche Wege (Telefon, E-Mail), was zu:</p>
 </div>
@@ -505,8 +511,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>führt.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_aufgabenstellung"><a class="anchor" href="#_aufgabenstellung"></a>1.1.3. Aufgabenstellung</h4>
+</div>
+<div class="sect1">
+<h2 id="_3_aufgabenstellung"><a class="anchor" href="#_3_aufgabenstellung"></a>3. 3. Aufgabenstellung</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Eine digitale Plattform soll entwickelt werden, die:</p>
 </div>
@@ -524,22 +532,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_zielsetzung"><a class="anchor" href="#_zielsetzung"></a>1.1.4. Zielsetzung</h4>
+</div>
+<div class="sect1">
+<h2 id="_4_zielsetzung"><a class="anchor" href="#_4_zielsetzung"></a>4. 4. Zielsetzung</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Ziel ist es, eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um Probleme schnellstmöglich zu lösen. Die Plattform wird benutzerfreundlich und einfach zu bedienen sein.</p>
-</div>
-</div>
+<p>Unser Ziel ist es eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um das Problem schnellstmöglich zu lösen. Die Plattform soll benutzerfreundlich und einfach zu bedienen sein.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_anforderungen_soll"><a class="anchor" href="#_anforderungen_soll"></a>2. Anforderungen (Soll)</h2>
+<h2 id="_5_anforderungen_soll"><a class="anchor" href="#_5_anforderungen_soll"></a>5. 5. Anforderungen (Soll)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_funktionale_anforderungen"><a class="anchor" href="#_funktionale_anforderungen"></a>2.1. Funktionale Anforderungen</h3>
-<div class="sect4">
-<h5 id="_meldung_von_mängeln"><a class="anchor" href="#_meldung_von_mängeln"></a>Meldung von Mängeln</h5>
+<h3 id="_5_1_funktionale_anforderungen"><a class="anchor" href="#_5_1_funktionale_anforderungen"></a>5.1. 5.1 Funktionale Anforderungen</h3>
+<div class="sect3">
+<h4 id="_meldung_von_mängeln"><a class="anchor" href="#_meldung_von_mängeln"></a>5.1.1. Meldung von Mängeln</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -554,8 +562,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_datenverwaltung"><a class="anchor" href="#_datenverwaltung"></a>Datenverwaltung</h5>
+<div class="sect3">
+<h4 id="_datenverwaltung"><a class="anchor" href="#_datenverwaltung"></a>5.1.2. Datenverwaltung</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -575,9 +583,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_nicht_funktionale_anforderungen"><a class="anchor" href="#_nicht_funktionale_anforderungen"></a>2.2. Nicht-funktionale Anforderungen</h3>
-<div class="sect4">
-<h5 id="_benutzerfreundlichkeit"><a class="anchor" href="#_benutzerfreundlichkeit"></a>Benutzerfreundlichkeit</h5>
+<h3 id="_5_2_nicht_funktionale_anforderungen"><a class="anchor" href="#_5_2_nicht_funktionale_anforderungen"></a>5.2. 5.2 Nicht-funktionale Anforderungen</h3>
+<div class="sect3">
+<h4 id="_benutzerfreundlichkeit"><a class="anchor" href="#_benutzerfreundlichkeit"></a>5.2.1. Benutzerfreundlichkeit</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -586,8 +594,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_technische_anforderungen"><a class="anchor" href="#_technische_anforderungen"></a>Technische Anforderungen</h5>
+<div class="sect3">
+<h4 id="_technische_anforderungen"><a class="anchor" href="#_technische_anforderungen"></a>5.2.2. Technische Anforderungen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -600,46 +608,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_mengengerüst"><a class="anchor" href="#_mengengerüst"></a>2.3. Mengengerüst</h3>
-<div class="sect3">
-<h4 id="_anzahl_der_benutzer"><a class="anchor" href="#_anzahl_der_benutzer"></a>2.3.1. Anzahl der Benutzer</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Erwartet wird, dass 15% der Benutzer die Plattform nutzen werden. Die meisten kommen vermutlich aus Oberösterreich.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_anzahl_der_meldungen"><a class="anchor" href="#_anzahl_der_meldungen"></a>2.3.2. Anzahl der Meldungen</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_links"><a class="anchor" href="#_links"></a>3. Links</h2>
+<h2 id="_6_mengengerüst"><a class="anchor" href="#_6_mengengerüst"></a>6. 6. Mengengerüst</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_6_1_anzahl_der_benutzer"><a class="anchor" href="#_6_1_anzahl_der_benutzer"></a>6.1. 6.1 Anzahl der Benutzer</h3>
 <div class="paragraph">
-<p><a href="./projektauftrag.adoc">Projektauftrag</a><br>
-<a href="./pflichtenheft.adoc">Pflichtenheft</a><br>
-<a href="https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc">Scrum Board</a><br>
-<a href="./gui.adoc">Wireframes</a></p>
+<p>Es wird erwartet, dass 15% Benutzer die Plattform nutzen werden. Wir gehen davon aus, dass die meisten Benutzer aus Oberösterreich kommen werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_anzahl_der_meldungen"><a class="anchor" href="#_6_2_anzahl_der_meldungen"></a>6.2. 6.2 Anzahl der Meldungen</h3>
+<div class="paragraph">
+<p>Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
 Last updated 2025-03-11 15:02:27 UTC
 </div>
 </div>
