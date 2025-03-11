@@ -19,5 +19,6 @@ Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem Pro
 == Links
 link:./asciidocs/docs/projektauftrag.adoc[Projektauftrag] +
 link:./asciidocs/docs/pflichtenheft.adoc[Pflichtenheft] +
+link:./asciidocs/docs/gui.adoc[Wireframes] +
 link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[Scrum Board] +
 
