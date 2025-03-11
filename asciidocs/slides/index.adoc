@@ -158,7 +158,7 @@ Kommentar --> Benutzer : verfasst von
 ----
 
 == Links
-link:../asciidocs/docs/projektauftrag.adoc[Projektauftrag] +
-link:../asciidocs/docs/pflichtenheft.adoc[Pflichtenheft] +
+link:https://github.com/2425-3ahif-syp/02-projekte-meldestelle-staedtische-maengel/tree/main/asciidocs/docs/projektauftrag[Projektauftrag] +
+link:https://github.com/2425-3ahif-syp/02-projekte-meldestelle-staedtische-maengel/tree/main/asciidocs/docs/pflichtenheft[Pflichtenheft] +
 link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[Scrum Board] +
-link:../asciidocs/docs/gui.adoc[Wireframes]
+link:https://github.com/2425-3ahif-syp/02-projekte-meldestelle-staedtische-maengel/tree/main/asciidocs/docs/wireframe[Wireframes]
