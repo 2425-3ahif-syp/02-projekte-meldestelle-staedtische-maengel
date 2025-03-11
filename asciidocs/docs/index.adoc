@@ -31,6 +31,7 @@ endif::[]
 :title-slide-transition: zoom
 :title-slide-transition-speed: fast
 
+
 == Pflichtenheft
 
 === Beschreibung der Ausgangslage
@@ -91,8 +92,9 @@ Ziel ist es, eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Geme
 ==== Anzahl der Meldungen
 - Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.
 
+
 == Links
-link:./projektauftrag.adoc[Projektauftrag] +
-link:./pflichtenheft.adoc[Pflichtenheft] +
-link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[Scrum Board] +
-link:./gui.adoc[Wireframes]
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/projektauftrag/[**Projektauftrag**^]
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/pflichtenheft/[**Pflichtenheft**^]
+* link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[**Scrum Board**^]
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/wireframe/[**Wireframes**^]
