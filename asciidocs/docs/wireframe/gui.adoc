@@ -2,15 +2,15 @@
 
 == Startseite (Almina Silnovic)
 
-image::images/homepage.jpg[]
+image::../images/homepage.jpg[]
 
 == Anmeldung (Azra Özdemir)
 
-image::images/loginpage.jpg[]
+image::../images/loginpage.jpg[]
 
 == Meldung erstellen (Lejla Music)
 
-image::images/Reportpage.jpg[]
+image::../images/Reportpage.jpg[]
 
 == Informationsarchitektur 
-image::images/information.jpeg[]
+image::../images/information.jpeg[]
