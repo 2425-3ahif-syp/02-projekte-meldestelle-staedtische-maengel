@@ -17,8 +17,7 @@ Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem Pro
 3. **Als Bürger** möchte ich den Status meiner Mängelmeldung verfolgen können, um zu wissen, wann und ob der Mangel bearbeitet wurde.
 
 == Links
-link:./asciidocs/docs/projektauftrag.adoc[Projektauftrag] +
-link:./asciidocs/docs/pflichtenheft.adoc[Pflichtenheft] +
-link:./asciidocs/docs/gui.adoc[Wireframes] +
-link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[Scrum Board] +
-
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/projektauftrag/projektauftrag.html[**Projektauftrag**^]
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/pflichtenheft/pflichtenheft.html[**Pflichtenheft**^]
+* link:https://vm81.htl-leonding.ac.at/projects/564d6cc2-c4af-4140-825b-be13edce7dcc[**Scrum Board**^]
+* link:https://2425-3ahif-syp.github.io/02-projekte-meldestelle-staedtische-maengel/docs/wireframe/gui.html[**Wireframes**^]
