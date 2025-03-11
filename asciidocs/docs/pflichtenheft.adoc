@@ -10,35 +10,51 @@ Azra Özdemir | Almina Silnovic | Lejla Music
 Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet.
 Diese Methode erschwert es den Bürgern ein Problem zu melden, wodurch sie generell die Motivation verlieren könnten, das Problem zu melden. Das führt dazu, dass sie unentdeckt bleiben und spät oder gar nicht gelöst werden.
 
-== 2. Zielsetzung
+== 2. Problemstellung
+Die Meldung städtischer Mängel erfolgt oft über umständliche Wege (Telefon, E-Mail), was zu:
+
+* Verzögerter Bearbeitung von Problemen
+* Mangelnder Transparenz für Bürger
+* Ineffizienter Verwaltung der Meldungen
+
+führt.
+
+== 3. Aufgabenstellung
+Eine digitale Plattform soll entwickelt werden, die:
+
+* Einfache Erfassung von Mängeln mit Foto und Standort ermöglicht
+* Den Bearbeitungsstatus erfasst
+* Die Verwaltung und Bearbeitung der Meldungen regelt
+
+== 4. Zielsetzung
 Unser Ziel ist es eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um das Problem schnellstmöglich zu lösen. Die Plattform soll benutzerfreundlich und einfach zu bedienen sein.
 
-== 3. Anforderungen (Soll)
-=== 3.1 Anforderungen an die Applikationssoftware
+== 5. Anforderungen (Soll)
+=== 5.1 Funktionale Anforderungen
 
-=== Meldung von Mängeln
-Nutzer sollen die Möglichkeit haben, Mängel über ein Formular zu melden, das eine Beschreibung, einen Standort (via GPS oder manuell) und ein Foto des Problems umfasst. Die Meldungen sollen kategoriesiert und herausgefiltert werden (z.B. Straßen, Beleuchtung, Müll; Entscheidung vom Benutzer). Außerdem ist eine Registrierung oder ein Login mit Email und Passwort möglich.
+==== Meldung von Mängeln
+- Nutzer können Mängel über ein Formular melden (Beschreibung, Standort via GPS oder manuell, Foto).
+- Meldungen werden kategorisiert (z.B. Straßen, Beleuchtung, Müll).
+- Möglichkeit zur Registrierung oder Login mit Email und Passwort.
 
-=== Datenverwaltung
-Der Nutzer kann den Fortschritt der Meldung aktiv mitverfolgen. Der Benutzer erhält automatische Benachrichtigungen per E-Mail bei Statusänderungen.
-Die Meldungen sollen automatisch an die zuständige Gemeinde mithilfe von Emails versendet werden. Die Verwaltung kann den Status der Meldung ändern und das Problem lösen.
+==== Datenverwaltung
+- Nutzer können den Fortschritt der Meldung verfolgen.
+- Automatische Benachrichtigungen per E-Mail bei Statusänderungen.
+- Meldungen werden automatisch an die zuständige Gemeinde weitergeleitet.
+- Verwaltung kann den Status der Meldung ändern und das Problem lösen.
 
-=== Benutzerfreundlichkeit
-Die Website soll ein ansprechendes Design und eine einfache Nutzung bieten, sodass auch Menschen, die nicht viel Ahnung von Technik haben, sie nutzen können.
+=== 5.2 Nicht-funktionale Anforderungen
 
-=== 3.2 Anforderungen an die Systemplattform
+==== Benutzerfreundlichkeit
+- Ansprechendes Design und einfache Nutzung, auch für technisch weniger versierte Nutzer.
 
-=== Technische Anforderungen
+==== Technische Anforderungen
+- Webserver (z.B. über Github Pages) für Hosting, der Sicherheits- und Performanceanforderungen erfüllt.
+- Datenbank zur Speicherung der Meldungen, die sicher und zuverlässig aufgesetzt wird.
 
-==== Webserver
-Die Website soll auf einem Webserver gehostet werden (oder in unserem Fall, über Github Pages) , der die Anforderungen an die Sicherheit und Performance erfüllt.
-
-==== Datenbank
-Die Meldungen sollen in einer Datenbank gespeichert werden, um sie später abrufen zu können. Die Datenbank muss sicher und zuverlässig aufgesetzt werden.
-
-== 4. Mengengerüst
-=== 4.1 Anzahl der Benutzer
+== 6. Mengengerüst
+=== 6.1 Anzahl der Benutzer
 Es wird erwartet, dass 15% Benutzer die Plattform nutzen werden. Wir gehen davon aus, dass die meisten Benutzer aus Oberösterreich kommen werden.
 
-=== 4.2 Anzahl der Meldungen
+=== 6.2 Anzahl der Meldungen
 Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.
