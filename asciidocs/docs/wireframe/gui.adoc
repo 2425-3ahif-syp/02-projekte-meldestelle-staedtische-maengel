@@ -1,16 +1,27 @@
+:doctype: book
+:sectnums:
+:toc: left
+:toclevels: 3
+:toc-title: Inhaltsverzeichnis
+ifdef::env-ide[]
+:imagesdir: ./../images
+endif::[]
+ifndef::env-ide[]
+:imagesdir: ./../images
+endif::[]
 = GUI
 
 == Startseite (Almina Silnovic)
 
-image::../images/homepage.jpg[]
+image::homepage.jpg[]
 
 == Anmeldung (Azra Özdemir)
 
-image::../images/loginpage.jpg[]
+image::loginpage.jpg[]
 
 == Meldung erstellen (Lejla Music)
 
-image::../images/Reportpage.jpg[]
+image::Reportpage.jpg[]
 
 == Informationsarchitektur 
-image::../images/information.jpeg[]
+image::information.jpeg[]
