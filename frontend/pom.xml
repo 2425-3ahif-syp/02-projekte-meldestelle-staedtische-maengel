@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -18,9 +17,9 @@
 
     <dependencies>
         <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-controls</artifactId>
-                <version>17.0.2</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>22.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -89,7 +88,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>at.htl.contactmanager/at.htl.contactmanager.HelloApplication</mainClass>
+                            <mainClass>com.syp.App</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -105,7 +104,7 @@
                 <artifactId>jpro-maven-plugin</artifactId>
                 <version>${jpro.version}</version>
                 <configuration>
-                    <mainClassName>at.htl.contactmanager.HelloApplication</mainClassName>
+                    <mainClassName>com.syp.App</mainClassName>
                 </configuration>
             </plugin>
         </plugins>
