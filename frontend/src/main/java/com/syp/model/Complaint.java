@@ -1,21 +1,19 @@
 package com.syp.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Complaint {
-    private IntegerProperty id;
-    private StringProperty subject;
-    private StringProperty category;
-    private StringProperty address;
-    private StringProperty description;
-    private StringProperty imagePath;
-    private StringProperty status;
-    private ObjectProperty<LocalDateTime> createdAt;
-    private ObjectProperty<LocalDateTime> completedAt;
+    private IntegerProperty id = new SimpleIntegerProperty();
+    private StringProperty subject = new SimpleStringProperty();
+    private StringProperty category = new SimpleStringProperty();
+    private StringProperty address = new SimpleStringProperty();
+    private StringProperty description = new SimpleStringProperty();
+    private StringProperty imagePath = new SimpleStringProperty();
+    private StringProperty status = new SimpleStringProperty();
+    private ObjectProperty<LocalDateTime> createdAt = new SimpleObjectProperty<>();
+    private ObjectProperty<LocalDateTime> completedAt = new SimpleObjectProperty<>();
 
     public Complaint(int id, String subject, String category, String address, String description, String imagePath) {
         setId(id);
@@ -55,6 +53,7 @@ public class Complaint {
     public StringProperty getStatus() { return status; }
     public ObjectProperty<LocalDateTime> getCreatedAt() { return createdAt; }
     public ObjectProperty<LocalDateTime> getCompletedAt() { return completedAt; }
+
     public void setId(int id) { this.id.set(id); }
     public void setSubject(String subject) { this.subject.set(subject); }
     public void setCategory(String category) { this.category.set(category); }
