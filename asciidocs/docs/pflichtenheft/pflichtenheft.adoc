@@ -12,8 +12,7 @@ Azra Özdemir | Almina Silnovic | Lejla Music
 = Beschreibung der Ausgangslage
 ---
 == 1. Ist-Zustand
-Aktuell werden Mängel in einer Gemeinde meistens telefonisch oder über Briefe bei der Stadtverwaltung gemeldet.
-Diese Methode erschwert es den Bürgern ein Problem zu melden, wodurch sie generell die Motivation verlieren könnten, das Problem zu melden. Das führt dazu, dass sie unentdeckt bleiben und spät oder gar nicht gelöst werden.
+Aktuell werden Mängel in der Gemeinde meistens telefonisch oder per Brief bei der Stadtverwaltung gemeldet. Diese Methoden sind umständlich und erfordern oft viel Aufwand sowohl von den Bürgern als auch von der Verwaltung. Bürger müssen sich telefonisch melden oder Briefe schreiben, was zu einer Verzögerung der Problemmeldung führen kann. Dies könnte dazu führen, dass Mängel nicht rechtzeitig behoben werden oder ganz unentdeckt bleiben.
 
 == 2. Problemstellung
 Die Meldung städtischer Mängel erfolgt oft über umständliche Wege (Telefon, E-Mail), was zu:
@@ -32,26 +31,26 @@ Eine digitale Plattform soll entwickelt werden, die:
 * Die Verwaltung und Bearbeitung der Meldungen regelt
 
 == 4. Zielsetzung
-Unser Ziel ist es eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer Gemeinde melden können. Die Meldungen sollen automatisch an die zuständige Gemeinde weitergeleitet werden, um das Problem schnellstmöglich zu lösen. Die Plattform soll benutzerfreundlich und einfach zu bedienen sein.
+Unser Ziel ist es, eine Plattform zu entwickeln, auf der Bürger Mängel einfach melden können, indem sie eine Beschreibung, ein Foto und den Standort angeben. Die Plattform soll automatisch die zuständige Behörde benachrichtigen und den Bearbeitungsstatus der Meldungen transparent anzeigen. Zudem soll eine einfache Benutzeroberfläche sicherstellen, dass auch technisch unerfahrene Personen problemlos mit der Plattform arbeiten können.
 
 == 5. Anforderungen (Soll)
 === 5.1 Funktionale Anforderungen
 
 ==== Meldung von Mängeln
-- Nutzer können Mängel über ein Formular melden (Beschreibung, Standort via GPS oder manuell, Foto).
-- Meldungen werden kategorisiert (z.B. Straßen, Beleuchtung, Müll).
-- Möglichkeit zur Registrierung oder Login mit Email und Passwort.
+- Nutzer können über ein Online-Formular Mängel melden, indem sie eine Beschreibung, den Standort (automatisch per GPS oder manuell) und ein Foto angeben.
+- Meldungen werden in vordefinierte Kategorien eingeteilt (z. B. Straßen, Beleuchtung, Müll).
+- Nutzer können sich registrieren oder sich mit E-Mail und Passwort anmelden.
 
 ==== Datenverwaltung
-- Nutzer können den Fortschritt der Meldung verfolgen.
-- Automatische Benachrichtigungen per E-Mail bei Statusänderungen.
-- Meldungen werden automatisch an die zuständige Gemeinde weitergeleitet.
-- Verwaltung kann den Status der Meldung ändern und das Problem lösen.
+- Nutzer können den Bearbeitungsstatus ihrer Meldungen in Echtzeit verfolgen.
+- Bei einer Statusänderung werden Nutzer automatisch per E-Mail benachrichtigt.
+- Meldungen werden je nach Art und Standort direkt an die zuständige Gemeinde weitergeleitet.
+- Die Verwaltung kann den Status einer Meldung aktualisieren und entsprechende Maßnahmen zur Behebung einleiten.
 
 === 5.2 Nicht-funktionale Anforderungen
 
 ==== Benutzerfreundlichkeit
-- Ansprechendes Design und einfache Nutzung, auch für technisch weniger versierte Nutzer.
+- Die Plattform soll eine intuitive und leicht verständliche Benutzeroberfläche haben, die auch für technisch weniger erfahrene Personen einfach zu bedienen ist.
 
 ==== Technische Anforderungen
 - Webserver (z.B. über Github Pages) für Hosting, der Sicherheits- und Performanceanforderungen erfüllt.
@@ -59,7 +58,7 @@ Unser Ziel ist es eine Plattform zu entwickeln, auf der Bürger Mängel in ihrer
 
 == 6. Mengengerüst
 === 6.1 Anzahl der Benutzer
-Es wird erwartet, dass 15% Benutzer die Plattform nutzen werden. Wir gehen davon aus, dass die meisten Benutzer aus Oberösterreich kommen werden.
+Es wird erwartet, dass etwa 15 % der Einwohner die Plattform aktiv nutzen. Der Großteil der Nutzer dürfte aus Oberösterreich stammen.
 
 === 6.2 Anzahl der Meldungen
 Es wird erwartet, dass die Plattform mindestens 50 Meldungen pro Monat erhält.
