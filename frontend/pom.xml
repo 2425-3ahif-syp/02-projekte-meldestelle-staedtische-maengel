@@ -108,12 +108,24 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.css</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
     <repositories>
         <repository>
             <id>jpro-sandec-repository</id>
             <url>https://sandec.jfrog.io/artifactory/repo</url>
+        </repository>
+        <repository>
+            <id>openjfx</id>
+            <url>https://openjfx.io/maven</url>
         </repository>
     </repositories>
 
