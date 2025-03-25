@@ -1,13 +1,17 @@
 package com.syp;
 
 import com.syp.view.ComplaintPresenter;
+import com.syp.view.HomePagePresenter;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        ComplaintPresenter.show(stage);
+        //out-comment one of these if you want to see different pages:
+
+        HomePagePresenter.show(stage);
+        //ComplaintPresenter.show(stage);
     }
 
     public static void main(String[] args) {
