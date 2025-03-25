@@ -10,8 +10,8 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         //out-comment one of these if you want to see different pages:
 
-        HomePagePresenter.show(stage);
-        //ComplaintPresenter.show(stage);
+        //HomePagePresenter.show(stage);
+        ComplaintPresenter.show(stage);
     }
 
     public static void main(String[] args) {
