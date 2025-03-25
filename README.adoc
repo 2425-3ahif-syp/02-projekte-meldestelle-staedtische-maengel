@@ -7,9 +7,9 @@ CityCare ist eine Webplattform, die es Bürgern ermöglicht, städtische Mängel
 Unser Hauptziel ist es, die Lebensqualität der Bürger zu verbessern, indem Probleme schneller erkannt und behoben werden. Dadurch wird die Stadtverwaltung entlastet und die Zufriedenheit der Einwohner gesteigert.
 
 == Projektteam
-- **Almina Silnovic** (Projektleitung, 3AHIF) - alminasilnovic10@gmail.com
-- **Azra Özdemir** (Stellvertretung, 3AHIF) - azraozdemir@icloud.com
-- **Lejla Music** (Projektmitglied, 3AHIF) - lejlamusic2409@gmail.com
+- **Almina Silnovic** (Projektleitung, 3AHIF)
+- **Azra Özdemir** (Stellvertretung, 3AHIF)
+- **Lejla Music** (Projektmitglied, 3AHIF)
 
 == User Stories
 1. **Als Bürger** möchte ich Mängel in meiner Gemeinde melden können, damit diese schnellstmöglich behoben werden.
