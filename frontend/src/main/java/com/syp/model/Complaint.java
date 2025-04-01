@@ -31,17 +31,17 @@ public class Complaint {
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         String createdAtFormatted = (createdAt.get() != null) ? createdAt.get().format(formatter) : "N/A";
-        String completedAtFormatted = (completedAt.get() != null) ? completedAt.get().format(formatter) : "Nicht erledigt";
+        String completedAtFormatted = (completedAt.get() != null) ? completedAt.get().format(formatter) : "Not done yet";
 
-        return "Beschwerde #" + id.get() +
-                "\nBetreff: " + subject.get() +
-                "\nKategorie: " + category.get() +
-                "\nAdresse: " + address.get() +
-                "\nBeschreibung: " + description.get() +
-                "\nBildpfad: " + (imagePath.get().isEmpty() ? "Kein Bild" : imagePath.get()) +
+        return "Complaint #" + id.get() +
+                "\nSubject: " + subject.get() +
+                "\nCategory: " + category.get() +
+                "\nAddress: " + address.get() +
+                "\nDescription: " + description.get() +
+                "\nImage Path: " + (imagePath.get().isEmpty() ? "No Image" : imagePath.get()) +
                 "\nStatus: " + status.get() +
-                "\nErstellt am: " + createdAtFormatted +
-                "\nErledigt am: " + completedAtFormatted;
+                "\nCreated at: " + createdAtFormatted +
+                "\nDone at: " + completedAtFormatted;
     }
 
     public IntegerProperty getId() { return id; }
