@@ -31,8 +31,8 @@ public class HomePagePresenter {
 
     private void init() {
         reloadDataList();
-        updateHeader("Welcome to the Home Page");
-        updateFooter("Footer Information");
+        updateHeader("Home Page - [Stadt Name]");
+        updateFooter("Meldungen.com");
     }
 
     private void reloadDataList() {
@@ -50,7 +50,7 @@ public class HomePagePresenter {
     }
 
     private void createReport() {
-        // Logic to create a report
+        // Logic to create a report - Not implemented
     }
 
     private void updateHeader(String text) {
