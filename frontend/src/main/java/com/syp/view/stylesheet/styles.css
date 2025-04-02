@@ -47,3 +47,70 @@
     -fx-border-radius: 5;
     -fx-background-radius: 5;
 }
+
+.complaint-card {
+    -fx-border-color: lightgray;
+    -fx-border-width: 1px;
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5, 0, 0, 2);
+    -fx-pref-width: 100%;
+    -fx-margin: 10px 0;
+    -fx-transition: transform 0.2s ease-in-out;
+}
+
+.complaint-card:hover {
+    -fx-transform: scale(1.02);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 2);
+}
+
+.complaint-image {
+    -fx-fit-width: 100px;
+    -fx-preserve-ratio: true;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.complaint-details {
+    -fx-spacing: 10px;
+}
+
+.complaint-subject {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.complaint-details > Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666;
+}
+
+.scroll-pane {
+    -fx-background-color: #ffffff; /* Background color of the ScrollPane */
+    -fx-border-color: #cccccc; /* Border color of the ScrollPane */
+    -fx-border-width: 1px; /* Border width of the ScrollPane */
+    -fx-padding: 10px; /* Padding inside the ScrollPane */
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #f9f9f9; /* Background color of the viewport */
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #4CAF50; /* Color of the vertical scrollbar thumb */
+    -fx-background-radius: 5px; /* Rounded corners for the scrollbar thumb */
+}
+
+.scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #4CAF50; /* Color of the horizontal scrollbar thumb */
+    -fx-background-radius: 5px; /* Rounded corners for the scrollbar thumb */
+}
+
+.scroll-pane .scroll-bar:vertical .track,
+.scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: #e0e0e0; /* Color of the scrollbar track */
+}

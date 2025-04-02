@@ -1,6 +1,7 @@
 package com.syp.view;
 
 import com.syp.database.HomePageRepository;
+import com.syp.model.Complaint;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
@@ -10,7 +11,7 @@ import javafx.stage.Stage;
 public class HomePagePresenter {
     private final HomePageView view;
     private final HomePageRepository repo;
-    private final ObservableList<String> dataList = FXCollections.observableArrayList();
+    private final ObservableList<Complaint> dataList = FXCollections.observableArrayList();
 
     public HomePagePresenter(HomePageView view) {
         this.view = view;
@@ -21,7 +22,7 @@ public class HomePagePresenter {
     }
 
     private void bindViewToModel() {
-        view.getTable().setItems(dataList);
+        view.setComplaints(dataList);
     }
 
     private void attachEvents() {
@@ -37,7 +38,8 @@ public class HomePagePresenter {
 
     private void reloadDataList() {
         dataList.clear();
-        dataList.addAll(repo.getAllData());
+        dataList.addAll(repo.getAllComplaints());
+        view.setComplaints(dataList);
     }
 
     private void search() {
@@ -47,6 +49,7 @@ public class HomePagePresenter {
         } else {
             reloadDataList();
         }
+        view.setComplaints(dataList);
     }
 
     private void createReport() {
@@ -64,7 +67,7 @@ public class HomePagePresenter {
     }
 
     public static void show(Stage stage) {
-        HomePageView view = new HomePageView();
+        HomePageView view = new HomePageView(new HomePageRepository().getAllComplaints());
         HomePagePresenter presenter = new HomePagePresenter(view);
 
         Scene scene = new Scene(view.getRoot());
