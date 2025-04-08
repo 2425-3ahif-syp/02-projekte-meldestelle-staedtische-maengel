@@ -13,8 +13,8 @@ public class App extends Application {
         //run \.startDBServer.cmd for database
 
 
-        HomePagePresenter.show(stage);
-        //ComplaintPresenter.show(stage);
+        //HomePagePresenter.show(stage);
+        ComplaintPresenter.show(stage);
     }
 
     public static void main(String[] args) {

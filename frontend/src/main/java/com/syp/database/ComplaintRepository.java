@@ -22,14 +22,16 @@ public class ComplaintRepository {
         ) {
             while (rs.next()) {
                 complaintList.add(new Complaint(
-                                rs.getInt("id"),
-                                rs.getString("subject"),
-                                rs.getString("category"),
-                                rs.getString("address"),
-                                rs.getString("description"),
-                                rs.getString("imagePath")
-                        )
-                );
+                        rs.getInt("id"),
+                        rs.getString("subject"),
+                        rs.getString("category"),
+                        rs.getString("address"),
+                        rs.getString("description"),
+                        rs.getString("imagePath"),
+                        rs.getString("status"),
+                        rs.getTimestamp("createdAt").toLocalDateTime(),
+                        rs.getTimestamp("completedAt") != null ? rs.getTimestamp("completedAt").toLocalDateTime() : null
+                ));
             }
         } catch (SQLException e) {
             e.printStackTrace();

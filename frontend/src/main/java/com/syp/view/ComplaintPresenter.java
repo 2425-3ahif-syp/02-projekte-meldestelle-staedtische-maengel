@@ -10,6 +10,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
+import java.time.LocalDateTime;
+
 public class ComplaintPresenter {
     private Complaint complaint;
     private final ComplaintView view;
@@ -100,7 +102,9 @@ public class ComplaintPresenter {
             return;
         }
 
-        Complaint newComplaint = new Complaint(id, subject, category, address, description, imagePath);
+        Complaint newComplaint = new Complaint(
+                id, subject, category, address, description, imagePath, "Open", LocalDateTime.now(), null
+        );
         repo.addComplaint(newComplaint);
         complaintList.add(newComplaint);
         view.getLvComplaints().getSelectionModel().select(newComplaint);

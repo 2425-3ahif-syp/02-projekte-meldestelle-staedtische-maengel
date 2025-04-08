@@ -26,7 +26,10 @@ public class HomePageRepository {
                         rs.getString("category"),
                         rs.getString("address"),
                         rs.getString("description"),
-                        rs.getString("imagePath")
+                        rs.getString("imagePath"),
+                        rs.getString("status"),
+                        rs.getTimestamp("createdAt").toLocalDateTime(),
+                        rs.getTimestamp("completedAt") != null ? rs.getTimestamp("completedAt").toLocalDateTime() : null
                 ));
             }
         } catch (SQLException e) {
@@ -51,7 +54,10 @@ public class HomePageRepository {
                             rs.getString("category"),
                             rs.getString("address"),
                             rs.getString("description"),
-                            rs.getString("imagePath")
+                            rs.getString("imagePath"),
+                            rs.getString("status"),
+                            rs.getTimestamp("createdAt").toLocalDateTime(),
+                            rs.getTimestamp("completedAt") != null ? rs.getTimestamp("completedAt").toLocalDateTime() : null
                     ));
                 }
             }

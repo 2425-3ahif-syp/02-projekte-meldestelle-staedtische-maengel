@@ -15,16 +15,16 @@ public class Complaint {
     private ObjectProperty<LocalDateTime> createdAt = new SimpleObjectProperty<>();
     private ObjectProperty<LocalDateTime> completedAt = new SimpleObjectProperty<>();
 
-    public Complaint(int id, String subject, String category, String address, String description, String imagePath) {
+    public Complaint(int id, String subject, String category, String address, String description, String imagePath, String status, LocalDateTime createdAt, LocalDateTime completedAt) {
         setId(id);
         setSubject(subject);
         setCategory(category);
         setAddress(address);
         setDescription(description);
         setImagePath(imagePath);
-        setStatus("Open");
-        setCreatedAt(LocalDateTime.now());
-        setCompletedAt(null);
+        setStatus(status);
+        setCreatedAt(createdAt);
+        setCompletedAt(completedAt);
     }
 
     @Override

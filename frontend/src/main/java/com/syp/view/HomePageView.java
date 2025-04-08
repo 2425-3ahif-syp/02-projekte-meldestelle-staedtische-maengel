@@ -35,7 +35,7 @@ public class HomePageView {
         root.getChildren().addAll(header, searchField, searchButton, createReportButton, scrollPane, footer);
         footer.getStyleClass().add("footer");
         header.getStyleClass().add("header");
-        scrollPane.getStyleClass().add("scroll-pane"); // Apply the scroll-pane style class
+        scrollPane.getStyleClass().add("scroll-pane");
         root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/syp/view/stylesheet/styles.css")).toExternalForm());
 
         complaintListView.setCellFactory(new ComplaintCellFactory());
