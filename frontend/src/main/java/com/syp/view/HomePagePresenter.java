@@ -5,73 +5,114 @@ import com.syp.model.Complaint;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class HomePagePresenter {
+    private static final int ITEMS_PER_PAGE = 10;
+
     private final HomePageView view;
     private final HomePageRepository repo;
     private final ObservableList<Complaint> dataList = FXCollections.observableArrayList();
 
+    private int currentPage = 1;
+    private int totalItems = 0;
+
     public HomePagePresenter(HomePageView view) {
         this.view = view;
         this.repo = new HomePageRepository();
-        bindViewToModel();
-        attachEvents();
-        init();
+        initialize();
     }
 
-    private void bindViewToModel() {
+    private void initialize() {
+        setupEventHandlers();
+        loadInitialData();
+        setupHeaderFooter();
+    }
+
+    private void setupHeaderFooter() {
+        // Header mit Titel und Untertitel
+        view.getHeaderBox().getChildren().addAll(
+                new Label("Mängelmeldesystem"),
+                new Label("Bürgerportal")
+        );
+
+        // Footer mit Copyright-Informationen
+        view.getFooterBox().getChildren().add(
+                new Label("© 2023 Meldungen.com | Alle Rechte vorbehalten")
+        );
+    }
+
+    private void setupEventHandlers() {
+        view.getSearchButton().setOnAction(e -> {
+            currentPage = 1;
+            loadFilteredData();
+        });
+
+        view.getCreateReportButton().setOnAction(e -> showCreateReportDialog());
+
+        view.getPagination().currentPageIndexProperty().addListener((obs, oldIndex, newIndex) -> {
+            currentPage = newIndex.intValue() + 1;
+            loadFilteredData();
+        });
+
+        view.getCategoryFilter().getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            currentPage = 1;
+            loadFilteredData();
+        });
+
+        view.getStatusFilter().getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            currentPage = 1;
+            loadFilteredData();
+        });
+    }
+
+    private void loadInitialData() {
+        currentPage = 1;
+        loadFilteredData();
+    }
+
+    private void loadFilteredData() {
+        String searchText = view.getSearchField().getText().trim();
+        String category = view.getCategoryFilter().getValue();
+        String status = view.getStatusFilter().getValue();
+
+        dataList.setAll(repo.getFilteredComplaints(
+                searchText.isEmpty() ? null : searchText,
+                "Alle".equals(category) ? null : category,
+                "Alle".equals(status) ? null : status,
+                currentPage,
+                ITEMS_PER_PAGE
+        ));
+
+        totalItems = repo.getTotalComplaintCount(
+                searchText.isEmpty() ? null : searchText,
+                "Alle".equals(category) ? null : category,
+                "Alle".equals(status) ? null : status
+        );
+
         view.setComplaints(dataList);
+        view.setPagination(totalItems, currentPage, ITEMS_PER_PAGE);
     }
 
-    private void attachEvents() {
-        view.getSearchButton().setOnAction(_ -> search());
-        view.getCreateReportButton().setOnAction(_ -> createReport());
-    }
+    private void showCreateReportDialog() {
+        // Implementierung des Dialogs zur Meldungserstellung
+        System.out.println("Dialog zur Meldungserstellung würde geöffnet werden");
 
-    private void init() {
-        reloadDataList();
-        updateHeader("Home Page - [Stadt Name]");
-        updateFooter("Meldungen.com");
-    }
-
-    private void reloadDataList() {
-        dataList.clear();
-        dataList.addAll(repo.getAllComplaints());
-        view.setComplaints(dataList);
-    }
-
-    private void search() {
-        String searchText = view.getSearchField().getText().toLowerCase();
-        if (!searchText.isEmpty()) {
-            dataList.setAll(repo.searchData(searchText));
-        } else {
-            reloadDataList();
-        }
-        view.setComplaints(dataList);
-    }
-
-    private void createReport() {
-        // Logic to create a report - Not implemented
-    }
-
-    private void updateHeader(String text) {
-        view.getHeader().getChildren().clear();
-        view.getHeader().getChildren().add(new Text(text));
-    }
-
-    private void updateFooter(String text) {
-        view.getFooter().getChildren().clear();
-        view.getFooter().getChildren().add(new Text(text));
+        // Beispiel:
+        // CreateReportDialog dialog = new CreateReportDialog();
+        // dialog.showAndWait().ifPresent(complaint -> {
+        //     repo.addComplaint(complaint);
+        //     loadFilteredData();
+        // });
     }
 
     public static void show(Stage stage) {
-        HomePageView view = new HomePageView(new HomePageRepository().getAllComplaints());
+        HomePageView view = new HomePageView();
         HomePagePresenter presenter = new HomePagePresenter(view);
 
-        Scene scene = new Scene(view.getRoot());
-        stage.setTitle("Home Page");
+        Scene scene = new Scene(view.getRoot(), 1024, 768);
+        stage.setTitle("Mängelmeldesystem");
         stage.setScene(scene);
         stage.show();
     }

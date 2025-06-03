@@ -1,84 +1,66 @@
 package com.syp.view;
 
 import com.syp.model.Complaint;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 
-import java.util.List;
-import java.util.Objects;
+public class HomePageView extends BorderPane{
+    private final BorderPane root = new BorderPane();
+    private final HBox headerBox = new HBox();
+    private final HBox footerBox = new HBox();
+    private final TableView<Complaint> complaintTable = new TableView<>();
+    private final TextField searchField = new TextField();
+    private final ComboBox<String> categoryFilter = new ComboBox<>();
+    private final ComboBox<String> statusFilter = new ComboBox<>();
+    private final Button searchButton = new Button("Suchen");
+    private final Button createReportButton = new Button("Neue Meldung");
+    private final Pagination pagination = new Pagination();
 
-public class HomePageView {
-    private final VBox root;
-    private final HBox header;
-    private final HBox footer;
-    private final ListView<Complaint> complaintListView;
-    private final ScrollPane scrollPane;
-    private final Button searchButton;
-    private final Button createReportButton;
-    private final TextField searchField;
-
-    public HomePageView(List<Complaint> complaints) {
-        root = new VBox();
-        header = new HBox();
-        footer = new HBox();
-        complaintListView = new ListView<>();
-        scrollPane = new ScrollPane(complaintListView);
-        searchButton = new Button("Search");
-        createReportButton = new Button("Create Report");
-        searchField = new TextField();
-
-        root.getChildren().addAll(header, searchField, searchButton, createReportButton, scrollPane, footer);
-        footer.getStyleClass().add("footer");
-        header.getStyleClass().add("header");
-        scrollPane.getStyleClass().add("scroll-pane"); // Apply the scroll-pane style class
-        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/syp/view/stylesheet/styles.css")).toExternalForm());
-
-        complaintListView.setCellFactory(new ComplaintCellFactory());
-        setComplaints(complaints);
-
-        VBox.setVgrow(scrollPane, Priority.ALWAYS);
-        scrollPane.setFitToWidth(true);
-        scrollPane.setPrefHeight(600);
+    public HomePageView() {
+        setupUI();
     }
 
-    public void setComplaints(List<Complaint> complaints) {
-        complaintListView.getItems().setAll(complaints);
+    private void setupUI() {
+        // Header konfigurieren
+        headerBox.getStyleClass().add("header");
+        headerBox.setSpacing(20);
+
+        // Footer konfigurieren
+        footerBox.getStyleClass().add("footer");
+
+        // Filterleiste
+        HBox filterBox = new HBox(10, searchField, categoryFilter, statusFilter, searchButton);
+
+        // Hauptlayout
+        VBox centerBox = new VBox(10, filterBox, complaintTable, pagination, createReportButton);
+        centerBox.setPadding(new Insets(10));
+
+        root.setTop(headerBox);
+        root.setCenter(centerBox);
+        root.setBottom(footerBox);
     }
 
-    public VBox getRoot() {
-        return root;
+    // Getter-Methoden mit den korrekten Namen
+    public BorderPane getRoot() { return root; }
+    public HBox getHeaderBox() { return headerBox; }
+    public HBox getFooterBox() { return footerBox; }
+    public TableView<Complaint> getComplaintTable() { return complaintTable; }
+    public TextField getSearchField() { return searchField; }
+    public ComboBox<String> getCategoryFilter() { return categoryFilter; }
+    public ComboBox<String> getStatusFilter() { return statusFilter; }
+    public Button getSearchButton() { return searchButton; }
+    public Button getCreateReportButton() { return createReportButton; }
+    public Pagination getPagination() { return pagination; }
+
+    public void setComplaints(ObservableList<Complaint> complaints) {
+        complaintTable.setItems(complaints);
     }
 
-    public HBox getHeader() {
-        return header;
-    }
-
-    public HBox getFooter() {
-        return footer;
-    }
-
-    public ListView<Complaint> getComplaintListView() {
-        return complaintListView;
-    }
-
-    public ScrollPane getScrollPane() {
-        return scrollPane;
-    }
-
-    public Button getSearchButton() {
-        return searchButton;
-    }
-
-    public Button getCreateReportButton() {
-        return createReportButton;
-    }
-
-    public TextField getSearchField() {
-        return searchField;
+    public void setPagination(int totalItems, int currentPage, int itemsPerPage) {
+        int pageCount = (int) Math.ceil((double) totalItems / itemsPerPage);
+        pagination.setPageCount(pageCount);
+        pagination.setCurrentPageIndex(currentPage - 1);
     }
 }

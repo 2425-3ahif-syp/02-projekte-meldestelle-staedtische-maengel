@@ -55,12 +55,16 @@ public class Database {
                 "address VARCHAR(255), " +
                 "description VARCHAR(255), " +
                 "imagePath VARCHAR(255), " +
-                "status VARCHAR(255), " +
-                "createdAt TIMESTAMP, " +
+                "status VARCHAR(50) DEFAULT 'Offen', " +
+                "createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
                 "completedAt TIMESTAMP)";
 
         try (Statement statement = connection.createStatement()) {
             statement.execute(createComplaintTable);
+
+            // Beispiel-Daten einfügen (nur für Testzwecke)
+            statement.execute("INSERT INTO complaint (subject, category, address, description, status) " +
+                    "VALUES ('Schlagloch', 'Straßenschaden', 'Hauptstraße 1', 'Großes Schlagloch vor Nr. 1', 'Offen')");
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      styleClass="create-form"
+      spacing="15">
+
+    <Text styleClass="header" text="Neue Mängelmeldung"/>
+
+    <Label text="Betreff*" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="titleField" promptText="Kurze Beschreibung"/>
+
+    <Label text="Kategorie*" style="-fx-font-weight: bold;"/>
+    <ComboBox fx:id="categoryCombo" promptText="Kategorie wählen"/>
+
+    <Label text="Standort*" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="locationField" promptText="Adresse oder Ort"/>
+
+    <Label text="Ausführliche Beschreibung"/>
+    <TextArea fx:id="descriptionField" wrapText="true" promptText="Details zum Mangel"/>
+
+    <Label text="Bild hinzufügen (optional)"/>
+    <Button fx:id="uploadButton" text="Bild auswählen"
+            style="-fx-background-color: #E6E9ED; -fx-text-fill: #333;"/>
+
+    <CheckBox fx:id="notificationCheck" text="Ich möchte über den Fortschritt informiert werden"/>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Button fx:id="backButton" text="Zurück"
+                style="-fx-background-color: #E6E9ED; -fx-text-fill: #333;"/>
+        <Button fx:id="submitButton" text="Meldung abschicken"
+                styleClass="submit-button"/>
+    </HBox>
+</VBox>
