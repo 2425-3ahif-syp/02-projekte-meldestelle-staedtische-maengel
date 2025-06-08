@@ -62,8 +62,8 @@ public class ComplaintRepository {
 
     public void save(Complaint c) {
         String sql = "INSERT INTO COMPLAINT "
-                + "(SUBJECT, CATEGORY, ADDRESS, DESCRIPTION, IMAGEPATH, STATUS, CREATEDAT) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                + "(SUBJECT, CATEGORY, ADDRESS, DESCRIPTION, IMAGEPATH, STATUS, CREATEDAT, USER_EMAIL) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = Database.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -74,6 +74,7 @@ public class ComplaintRepository {
             ps.setString(5, c.getImagePath());
             ps.setString(6, "Offen");
             ps.setTimestamp(7, new Timestamp(System.currentTimeMillis()));
+            ps.setString(8, c.getUserEmail());
             ps.executeUpdate();
 
             ResultSet keys = ps.getGeneratedKeys();
@@ -123,6 +124,7 @@ public class ComplaintRepository {
                 rs.getString("DESCRIPTION"),
                 rs.getString("IMAGEPATH"),
                 rs.getString("STATUS"),
+                rs.getString("USER_EMAIL"),
                 rs.getTimestamp("CREATEDAT"),
                 rs.getTimestamp("COMPLETEDAT")
         );

@@ -211,7 +211,6 @@ public class HomePageView {
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
-
         loadFilteredData();
     }
 
@@ -247,8 +246,10 @@ public class HomePageView {
         if (success) {
             AdminDashboardView adminView = new AdminDashboardView();
             adminView.show();
+            loadFilteredData();
         }
     }
+
 
     private void showDetails(Complaint c) {
         if (c == null) {

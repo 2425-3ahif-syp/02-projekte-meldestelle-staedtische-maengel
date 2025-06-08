@@ -22,8 +22,10 @@ public class AdminDashboardView {
     private ImageView imageView;
     private Label lblNoImage;
 
+    private Stage stage;
+
     public void show() {
-        Stage stage = new Stage();
+        stage = new Stage();
         stage.setTitle("Admin Dashboard");
 
         BorderPane root = new BorderPane();
@@ -88,8 +90,9 @@ public class AdminDashboardView {
         ComboBox<String> cbNewStatus = new ComboBox<>();
         cbNewStatus.getItems().addAll("Offen", "In Bearbeitung", "Abgeschlossen");
         cbNewStatus.setValue("Offen");
+        Button btnDelete = new Button("Löschen");
         Button btnUpdate = new Button("Status aktualisieren");
-        statusBox.getChildren().addAll(lblNewStatus, cbNewStatus, btnUpdate);
+        statusBox.getChildren().addAll(lblNewStatus, cbNewStatus, btnUpdate, btnDelete);
 
         leftBox.getChildren().addAll(table, statusBox);
 
@@ -131,6 +134,30 @@ public class AdminDashboardView {
                 loadData();
             }
         });
+
+        btnDelete.setOnAction(e -> {
+            Complaint selected = table.getSelectionModel().getSelectedItem();
+            if (selected != null) {
+                Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
+                confirm.setTitle("Löschen bestätigen");
+                confirm.setHeaderText("Meldung wirklich löschen?");
+                confirm.setContentText("Diese Aktion kann nicht rückgängig gemacht werden.");
+
+                confirm.showAndWait().ifPresent(response -> {
+                    if (response == ButtonType.OK) {
+                        complaintService.deleteComplaintById(selected.getId());
+                        loadData();
+                        imageView.setImage(null);
+                        lblNoImage.setText("Keine Meldung ausgewählt.");
+                    }
+                });
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Bitte wähle eine Meldung aus.");
+                alert.showAndWait();
+            }
+        });
+
+
         btnLogout.setOnAction(e -> stage.close());
 
 

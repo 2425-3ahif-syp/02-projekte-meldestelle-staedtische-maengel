@@ -60,6 +60,16 @@ public class CreateComplaintView {
         imageBox.getChildren().addAll(btnUpload, lblImagePath);
         imageBox.setAlignment(Pos.CENTER_LEFT);
 
+        // Email notification checkbox and field
+        CheckBox cbNotify = new CheckBox("Benachrichtigungen per E-Mail erhalten");
+        TextField tfEmail = new TextField();
+        tfEmail.setPromptText("E-Mail-Adresse");
+        tfEmail.setDisable(true);
+
+        cbNotify.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            tfEmail.setDisable(!newVal);
+        });
+
         grid.add(lblSubject, 0, 0);
         grid.add(tfSubject, 1, 0);
         grid.add(lblCategory, 0, 1);
@@ -70,6 +80,8 @@ public class CreateComplaintView {
         grid.add(taDescription, 1, 3);
         grid.add(lblImage, 0, 4);
         grid.add(imageBox, 1, 4);
+        grid.add(cbNotify, 1, 5);
+        grid.add(tfEmail, 1, 6);
 
         Button btnBack = new Button("Abbrechen");
         btnBack.getStyleClass().addAll("button", "cancel");
@@ -82,7 +94,7 @@ public class CreateComplaintView {
 
         root.getChildren().addAll(lblHeader, grid, buttonBox);
 
-        Scene scene = new Scene(root, 550, 450);
+        Scene scene = new Scene(root, 550, 500);
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         stage.setScene(scene);
 
@@ -100,18 +112,22 @@ public class CreateComplaintView {
             }
         });
 
-        btnBack.setOnAction(e -> {
-            stage.close();
-        });
+        btnBack.setOnAction(e -> stage.close());
 
         btnSubmit.setOnAction(e -> {
             String subject = tfSubject.getText().trim();
             String category = cbCategory.getValue();
             String location = tfLocation.getText().trim();
             String description = taDescription.getText().trim();
+            String email = cbNotify.isSelected() ? tfEmail.getText().trim() : null;
 
             if (subject.isEmpty() || category == null || location.isEmpty()) {
                 Toast.show(stage, "Betreff, Kategorie und Standort sind Pflichtfelder.");
+                return;
+            }
+
+            if (cbNotify.isSelected() && (email == null || !email.matches("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"))) {
+                Toast.show(stage, "Bitte geben Sie eine gültige E-Mail-Adresse ein.");
                 return;
             }
 
@@ -139,7 +155,7 @@ public class CreateComplaintView {
 
             try {
                 complaintService.registerComplaint(
-                        subject, category, location, description, relativeImagePath
+                        subject, category, location, description, relativeImagePath, email
                 );
                 Toast.show(stage, "Meldung erfolgreich abgeschickt.");
                 stage.close();

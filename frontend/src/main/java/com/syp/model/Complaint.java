@@ -11,11 +11,13 @@ public class Complaint {
     private final StringProperty description = new SimpleStringProperty();
     private final StringProperty imagePath = new SimpleStringProperty();
     private final StringProperty status = new SimpleStringProperty();
+    private final StringProperty userEmail = new SimpleStringProperty();
+
     private final ObjectProperty<Timestamp> createdAt = new SimpleObjectProperty<>();
     private final ObjectProperty<Timestamp> completedAt = new SimpleObjectProperty<>();
 
     public Complaint(int id, String subject, String category, String address,
-                     String description, String imagePath, String status,
+                     String description, String imagePath, String status, String userEmail,
                      Timestamp createdAt, Timestamp completedAt) {
         this.id.set(id);
         this.subject.set(subject);
@@ -24,6 +26,7 @@ public class Complaint {
         this.description.set(description);
         this.imagePath.set(imagePath);
         this.status.set(status);
+        this.userEmail.set(userEmail);
         this.createdAt.set(createdAt);
         this.completedAt.set(completedAt);
     }
@@ -63,4 +66,8 @@ public class Complaint {
     public ObjectProperty<Timestamp> completedAtProperty() { return completedAt; }
     public Timestamp getCompletedAt()                      { return completedAt.get(); }
     public void setCompletedAt(Timestamp t)                { completedAt.set(t); }
+
+    public StringProperty userEmailProperty() { return userEmail; }
+    public String getUserEmail() { return userEmail.get(); }
+    public void setUserEmail(String email) { this.userEmail.set(email); }
 }

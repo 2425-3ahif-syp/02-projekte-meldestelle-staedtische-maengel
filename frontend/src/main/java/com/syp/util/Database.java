@@ -36,7 +36,7 @@ public class Database {
     }
 
     private static final String JDBC_URL =
-            "jdbc:h2:tcp://localhost:9092/./backend/db/cityIssuesDb;AUTO_SERVER=TRUE";
+            "jdbc:h2:tcp://localhost:9092/.././backend/db/cityIssuesDb;AUTO_SERVER=TRUE";
 
     private static final String USER = "sa";
     private static final String PASS = "";
@@ -59,7 +59,8 @@ public class Database {
                             + "  IMAGEPATH VARCHAR(255),"
                             + "  STATUS VARCHAR(255),"
                             + "  CREATEDAT TIMESTAMP,"
-                            + "  COMPLETEDAT TIMESTAMP"
+                            + "  COMPLETEDAT TIMESTAMP,"
+                            + "  USER_EMAIL VARCHAR(255)"
                             + ");";
             stmt.execute(sqlComplaint);
 
