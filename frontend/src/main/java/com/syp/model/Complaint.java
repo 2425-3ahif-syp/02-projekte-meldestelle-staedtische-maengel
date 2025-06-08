@@ -1,66 +1,66 @@
 package com.syp.model;
 
 import javafx.beans.property.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.sql.Timestamp;
 
 public class Complaint {
-    private IntegerProperty id = new SimpleIntegerProperty();
-    private StringProperty subject = new SimpleStringProperty();
-    private StringProperty category = new SimpleStringProperty();
-    private StringProperty address = new SimpleStringProperty();
-    private StringProperty description = new SimpleStringProperty();
-    private StringProperty imagePath = new SimpleStringProperty();
-    private StringProperty status = new SimpleStringProperty();
-    private ObjectProperty<LocalDateTime> createdAt = new SimpleObjectProperty<>();
-    private ObjectProperty<LocalDateTime> completedAt = new SimpleObjectProperty<>();
+    private final IntegerProperty id = new SimpleIntegerProperty();
+    private final StringProperty subject = new SimpleStringProperty();
+    private final StringProperty category = new SimpleStringProperty();
+    private final StringProperty address = new SimpleStringProperty();
+    private final StringProperty description = new SimpleStringProperty();
+    private final StringProperty imagePath = new SimpleStringProperty();
+    private final StringProperty status = new SimpleStringProperty();
+    private final ObjectProperty<Timestamp> createdAt = new SimpleObjectProperty<>();
+    private final ObjectProperty<Timestamp> completedAt = new SimpleObjectProperty<>();
 
-    public Complaint(int id, String subject, String category, String address, String description, String imagePath) {
-        setId(id);
-        setSubject(subject);
-        setCategory(category);
-        setAddress(address);
-        setDescription(description);
-        setImagePath(imagePath);
-        setStatus("Open");
-        setCreatedAt(LocalDateTime.now());
-        setCompletedAt(null);
+    public Complaint(int id, String subject, String category, String address,
+                     String description, String imagePath, String status,
+                     Timestamp createdAt, Timestamp completedAt) {
+        this.id.set(id);
+        this.subject.set(subject);
+        this.category.set(category);
+        this.address.set(address);
+        this.description.set(description);
+        this.imagePath.set(imagePath);
+        this.status.set(status);
+        this.createdAt.set(createdAt);
+        this.completedAt.set(completedAt);
     }
 
-    @Override
-    public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        String createdAtFormatted = (createdAt.get() != null) ? createdAt.get().format(formatter) : "N/A";
-        String completedAtFormatted = (completedAt.get() != null) ? completedAt.get().format(formatter) : "Not done yet";
+    public IntegerProperty idProperty() { return id; }
+    public int getId()           { return id.get(); }
+    public void setId(int id)    { this.id.set(id); }
 
-        return "Complaint #" + id.get() +
-                "\nSubject: " + subject.get() +
-                "\nCategory: " + category.get() +
-                "\nAddress: " + address.get() +
-                "\nDescription: " + description.get() +
-                "\nImage Path: " + (imagePath.get().isEmpty() ? "No Image" : imagePath.get()) +
-                "\nStatus: " + status.get() +
-                "\nCreated at: " + createdAtFormatted +
-                "\nDone at: " + completedAtFormatted;
-    }
+    public StringProperty subjectProperty() { return subject; }
+    public String getSubject()              { return subject.get(); }
+    public void setSubject(String s)        { subject.set(s); }
 
-    public IntegerProperty getId() { return id; }
-    public StringProperty getSubject() { return subject; }
-    public StringProperty getCategory() { return category; }
-    public StringProperty getAddress() { return address; }
-    public StringProperty getDescription() { return description; }
-    public StringProperty getImagePath() { return imagePath; }
-    public StringProperty getStatus() { return status; }
-    public ObjectProperty<LocalDateTime> getCreatedAt() { return createdAt; }
-    public ObjectProperty<LocalDateTime> getCompletedAt() { return completedAt; }
+    public StringProperty categoryProperty() { return category; }
+    public String getCategory()              { return category.get(); }
+    public void setCategory(String c)        { category.set(c); }
 
-    public void setId(int id) { this.id.set(id); }
-    public void setSubject(String subject) { this.subject.set(subject); }
-    public void setCategory(String category) { this.category.set(category); }
-    public void setAddress(String address) { this.address.set(address); }
-    public void setDescription(String description) { this.description.set(description); }
-    public void setImagePath(String imagePath) { this.imagePath.set(imagePath); }
-    public void setStatus(String status) { this.status.set(status); }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt.set(createdAt); }
-    public void setCompletedAt(LocalDateTime completedAt) { this.completedAt.set(completedAt); }
+    public StringProperty addressProperty() { return address; }
+    public String getAddress()              { return address.get(); }
+    public void setAddress(String a)        { address.set(a); }
+
+    public StringProperty descriptionProperty() { return description; }
+    public String getDescription()               { return description.get(); }
+    public void setDescription(String d)         { description.set(d); }
+
+    public StringProperty imagePathProperty() { return imagePath; }
+    public String getImagePath()              { return imagePath.get(); }
+    public void setImagePath(String p)        { imagePath.set(p); }
+
+    public StringProperty statusProperty() { return status; }
+    public String getStatus()              { return status.get(); }
+    public void setStatus(String s)        { status.set(s); }
+
+    public ObjectProperty<Timestamp> createdAtProperty() { return createdAt; }
+    public Timestamp getCreatedAt()                     { return createdAt.get(); }
+    public void setCreatedAt(Timestamp t)                { createdAt.set(t); }
+
+    public ObjectProperty<Timestamp> completedAtProperty() { return completedAt; }
+    public Timestamp getCompletedAt()                      { return completedAt.get(); }
+    public void setCompletedAt(Timestamp t)                { completedAt.set(t); }
 }

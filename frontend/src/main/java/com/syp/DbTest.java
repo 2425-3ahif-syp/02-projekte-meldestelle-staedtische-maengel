@@ -1,25 +1,41 @@
 package com.syp;
 
-import com.syp.database.ComplaintRepository;
-import com.syp.database.Database;
 import com.syp.model.Complaint;
+import com.syp.repository.ComplaintRepository;
+import com.syp.util.Database;
+
+import java.sql.*;
 import java.util.List;
 
 public class DbTest {
     public static void main(String[] args) {
-        Database database = Database.getInstance();
+        System.out.println("Starte Datenbank-Test...");
+
+        try (Connection conn = Database.getConnection()) {
+            System.out.println("Datenbank-Verbindung erfolgreich!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return;
+        }
+
         ComplaintRepository complaintRepository = new ComplaintRepository();
 
-        Complaint complaint1 = new Complaint(1,"Littering in Park", "Environment", "Parkstrasse 5, Linz", "There is a lot of litter around the park.", "");
-        Complaint complaint2 = new Complaint(2,"Broken Streetlight", "Infrastructure", "Main Street 12, Wels", "The streetlight near the bus stop is broken.", "");
-        Complaint complaint3 = new Complaint(3,"Pothole on Road", "Infrastructure", "Schulstrasse 7, Linz", "There is a large pothole that needs repair.", "");
+        try (Connection conn = Database.getConnection();
+             PreparedStatement ps = conn.prepareStatement("SELECT * FROM APP_USER");
+             ResultSet rs = ps.executeQuery()) {
 
-        complaintRepository.addComplaint(complaint1);
-        complaintRepository.addComplaint(complaint2);
-        complaintRepository.addComplaint(complaint3);
+            System.out.println("--- Alle Benutzer in APP_USER: ---");
+            while (rs.next()) {
+                System.out.println(
+                        "ID=" + rs.getInt("ID") +
+                                ", USERNAME=" + rs.getString("USERNAME") +
+                                ", ROLE=" + rs.getString("ROLE")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        List<Complaint> complaints = complaintRepository.getAllComplaints();
-
-        complaints.forEach(System.out::println);
+        System.out.println("Datenbank-Test abgeschlossen.");
     }
 }
