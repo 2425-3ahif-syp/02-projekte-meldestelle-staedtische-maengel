@@ -1,7 +1,9 @@
 package com.syp.view;
 
 import com.syp.model.Complaint;
+import com.syp.model.Report;
 import com.syp.service.ComplaintService;
+import com.syp.service.ReportService;
 import com.syp.util.Config;
 import com.syp.util.Toast;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -19,11 +21,15 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.File;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 public class HomePageView {
     private final Stage primaryStage;
     private final ComplaintService complaintService = new ComplaintService();
+    private final ReportService reportService = new ReportService();
+
 
     private TableView<Complaint> tableComplaints;
     private TextField searchField;
@@ -281,9 +287,13 @@ public class HomePageView {
     }
 
     private void openReportDialogView(Complaint complaint) {
-        ReportDialogView reportDialogView = new ReportDialogView(complaint);
-        reportDialogView.showAndWait();
-        loadFilteredData();
+        ReportDialogView reportDialog = new ReportDialogView(complaint);
+
+        Optional<String> maybeReason = reportDialog.showAndWait();
+        maybeReason.ifPresent(reason -> {
+            Report report = new Report(0, complaint.getId(), reason, LocalDateTime.now());
+            reportService.saveReport(report.getComplaintId(), report.getReason());
+        });
     }
 
     private void openLoginDialog() {

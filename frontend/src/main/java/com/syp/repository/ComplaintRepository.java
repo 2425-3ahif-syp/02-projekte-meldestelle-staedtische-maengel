@@ -104,6 +104,24 @@ public class ComplaintRepository {
         }
     }
 
+    public Complaint findById(int id) {
+        String sql = "SELECT * FROM COMPLAINT WHERE ID = ?";
+        try (Connection conn = Database.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return mapResultSetToComplaint(rs);
+            } else {
+                return null; // oder Optional<Complaint> verwenden, wenn gewünscht
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void delete(int id) {
         String sql = "DELETE FROM COMPLAINT WHERE ID = ?";
         try (Connection conn = Database.getConnection();

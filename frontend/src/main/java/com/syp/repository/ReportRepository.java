@@ -23,38 +23,6 @@ public class ReportRepository {
         }
     }
 
-    public List<Report> findByComplaintId(int complaintId) {
-        String sql = "SELECT * FROM REPORT WHERE COMPLAINT_ID = ? ORDER BY REPORT_TIME DESC";
-        try (Connection conn = Database.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setInt(1, complaintId);
-            ResultSet rs = ps.executeQuery();
-
-            List<Report> list = new ArrayList<>();
-            while (rs.next()) {
-                list.add(mapResultSetToReport(rs));
-            }
-            return list;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void deleteByComplaintId(int complaintId) {
-        String sql = "DELETE FROM REPORT WHERE COMPLAINT_ID = ?";
-        try (Connection conn = Database.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setInt(1, complaintId);
-            ps.executeUpdate();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     private Report mapResultSetToReport(ResultSet rs) throws SQLException {
         return new Report(
                 rs.getInt("ID"),
@@ -62,5 +30,41 @@ public class ReportRepository {
                 rs.getString("REASON"),
                 rs.getTimestamp("REPORT_TIME").toLocalDateTime()
         );
+    }
+
+    public Report findById(int id) {
+        String sql = "SELECT * FROM REPORT WHERE ID = ?";
+        try (Connection conn = Database.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return mapResultSetToReport(rs);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null; // nicht gefunden
+    }
+
+    public List<Report> findAll() {
+        List<Report> reports = new ArrayList<>();
+        String sql = "SELECT * FROM REPORT ORDER BY REPORT_TIME DESC";
+
+        try (Connection conn = Database.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                reports.add(mapResultSetToReport(rs));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return reports;
     }
 }

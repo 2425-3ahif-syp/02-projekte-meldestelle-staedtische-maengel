@@ -45,6 +45,9 @@ public class ComplaintService {
         repo.updateStatus(id, newStatus);
     }
 
+    public Complaint findById(int id) {
+        return repo.findById(id);
+    }
 
     public void deleteComplaintById(int id) {
         repo.delete(id);
