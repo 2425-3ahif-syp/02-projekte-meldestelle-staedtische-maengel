@@ -2,6 +2,7 @@ package com.syp.view;
 
 import com.syp.model.Complaint;
 import com.syp.service.ComplaintService;
+import com.syp.util.Toast;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -131,6 +132,7 @@ public class AdminDashboardView {
             String newStatus = cbNewStatus.getValue();
             if (selected != null && newStatus != null) {
                 complaintService.updateComplaintStatus(selected.getId(), newStatus);
+                Toast.show(stage, "Status aktualisiert auf: " + newStatus);
                 loadData();
             }
         });
@@ -146,14 +148,14 @@ public class AdminDashboardView {
                 confirm.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         complaintService.deleteComplaintById(selected.getId());
+                        Toast.show(stage, "Meldung erfolgreich gelöscht.");
                         loadData();
                         imageView.setImage(null);
                         lblNoImage.setText("Keine Meldung ausgewählt.");
                     }
                 });
             } else {
-                Alert alert = new Alert(Alert.AlertType.WARNING, "Bitte wähle eine Meldung aus.");
-                alert.showAndWait();
+                Toast.show(stage, "Bitte wähle eine Meldung aus.");
             }
         });
 
