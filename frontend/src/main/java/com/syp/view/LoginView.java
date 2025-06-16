@@ -1,6 +1,7 @@
 package com.syp.view;
 
 import com.syp.service.AuthenticationService;
+import com.syp.util.Toast;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -66,14 +67,14 @@ public class LoginView {
             String pass = pfPassword.getText();
 
             if (user.isEmpty() || pass.isEmpty()) {
-                lblError.setText("Bitte Benutzername und Passwort eingeben.");
+                Toast.show(stage, "Bitte Benutzername und Passwort eingeben.");
                 return;
             }
             if (authService.login(user, pass)) {
                 loginSuccess = true;
                 stage.close();
             } else {
-                lblError.setText("Ungültige Anmeldedaten.");
+                Toast.show(stage, "Ungültige Anmeldedaten.");
             }
         });
 

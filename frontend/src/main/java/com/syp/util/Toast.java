@@ -62,9 +62,6 @@ public class Toast {
                 y = screenBounds.getMaxY() - toastHeight - 20;
             }
 
-            System.out.println("TOAST Popup will show at x=" + x + ", y=" + y);
-
-
             Popup popup = new Popup();
             popup.getContent().add(container);
             popup.setAutoFix(true);
