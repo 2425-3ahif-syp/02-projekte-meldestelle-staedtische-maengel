@@ -73,6 +73,17 @@ public class Database {
                             + ");";
             stmt.execute(sqlUser);
 
+            String sqlReport=
+                    "CREATE TABLE report ("
+                    + "id IDENTITY PRIMARY KEY,"
+                    + "complaint_id INT NOT NULL,"
+                    + "reason VARCHAR(255),"
+                    + "report_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
+                    + "FOREIGN KEY (complaint_id) REFERENCES complaint(id)"
+                    + ");";
+            stmt.execute(sqlReport);
+
+
             String checkAdmin = "SELECT COUNT(*) FROM APP_USER";
             try (ResultSet rs = stmt.executeQuery(checkAdmin)) {
                 if (rs.next() && rs.getInt(1) == 0) {
