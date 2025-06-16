@@ -3,10 +3,8 @@ package com.syp.view;
 import com.syp.model.Complaint;
 import com.syp.service.ComplaintService;
 import com.syp.util.Toast;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -19,176 +17,121 @@ import java.util.List;
 
 public class AdminDashboardView {
     private final ComplaintService complaintService = new ComplaintService();
-    private ObservableList<Complaint> dataList;
-    private ImageView imageView;
-    private Label lblNoImage;
-
+    private final VBox cardContainer = new VBox(10);
     private Stage stage;
 
     public void show() {
         stage = new Stage();
-        stage.setTitle("\uD83D\uDEE0\uFE0F Admin Dashboard");
+        stage.setTitle("🛠️ Admin Dashboard");
 
-        BorderPane root = new BorderPane();
+        // Header
+        Label headerLabel = new Label("Admin Dashboard");
+        headerLabel.getStyleClass().add("header-label");
+        HBox header = new HBox(headerLabel);
+        header.setPadding(new Insets(20, 20, 10, 20));
 
-        HBox header = new HBox();
-        header.setPadding(new Insets(10));
-        Label lblHeader = new Label("Admin Dashboard");
-        lblHeader.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
-        header.getChildren().add(lblHeader);
-        root.setTop(header);
+        // Card-Container im ScrollPane
+        ScrollPane scroll = new ScrollPane(cardContainer);
+        scroll.setFitToWidth(true);
+        cardContainer.setPadding(new Insets(10));
+        cardContainer.setPrefWidth(800);
 
-        SplitPane splitPane = new SplitPane();
-        splitPane.setDividerPositions(0.6);
-
-        VBox leftBox = new VBox();
-        leftBox.setPadding(new Insets(10));
-        leftBox.setSpacing(10);
-
-        TableView<Complaint> table = new TableView<>();
-        TableColumn<Complaint, Number> colId = new TableColumn<>("ID");
-        colId.setCellValueFactory(cell -> cell.getValue().idProperty());
-        colId.setPrefWidth(50);
-
-        TableColumn<Complaint, String> colSubject = new TableColumn<>("Betreff");
-        colSubject.setCellValueFactory(cell -> cell.getValue().subjectProperty());
-        colSubject.setPrefWidth(200);
-
-        TableColumn<Complaint, String> colCategory = new TableColumn<>("Kategorie");
-        colCategory.setCellValueFactory(cell -> cell.getValue().categoryProperty());
-        colCategory.setPrefWidth(100);
-
-        TableColumn<Complaint, String> colAddress = new TableColumn<>("Standort");
-        colAddress.setCellValueFactory(cell -> cell.getValue().addressProperty());
-        colAddress.setPrefWidth(150);
-
-        TableColumn<Complaint, String> colStatus = new TableColumn<>("Status");
-        colStatus.setCellValueFactory(cell -> cell.getValue().statusProperty());
-        colStatus.setPrefWidth(120);
-
-        TableColumn<Complaint, String> colCreatedAt = new TableColumn<>("Erstellt am");
-        colCreatedAt.setCellValueFactory(cell -> {
-            if (cell.getValue().getCreatedAt() != null) {
-                return new SimpleStringProperty(cell.getValue().getCreatedAt().toString());
-            } else {
-                return new SimpleStringProperty("");
-            }
-        });
-        colCreatedAt.setPrefWidth(150);
-
-        table.getColumns().addAll(
-                colId, colSubject, colCategory, colAddress, colStatus, colCreatedAt
-        );
-
-        dataList = FXCollections.observableArrayList();
-        loadData();
-        table.setItems(dataList);
-
-        HBox statusBox = new HBox();
-        statusBox.setSpacing(10);
-        statusBox.setPadding(new Insets(10, 0, 0, 0));
-        Label lblNewStatus = new Label("Status ändern zu:");
-        ComboBox<String> cbNewStatus = new ComboBox<>();
-        cbNewStatus.getItems().addAll("Offen", "In Bearbeitung", "Abgeschlossen");
-        cbNewStatus.setValue("Offen");
-        Button btnDelete = new Button("\uD83D\uDDD1\uFE0F Löschen");
-        Button btnUpdate = new Button("✏\uFE0F Status aktualisieren");
-
-        btnDelete.setTooltip(new Tooltip("Meldung löschen"));
-        btnUpdate.setTooltip(new Tooltip("Status der Meldung ändern"));
-
-        statusBox.getChildren().addAll(lblNewStatus, cbNewStatus, btnUpdate, btnDelete);
-
-        leftBox.getChildren().addAll(table, statusBox);
-
-        VBox rightBox = new VBox();
-        rightBox.setPadding(new Insets(10));
-        rightBox.setSpacing(10);
-
-        Label lblImageTitle = new Label("Bild zur ausgewählten Meldung:");
-        imageView = new ImageView();
-        imageView.setFitWidth(300);
-        imageView.setPreserveRatio(true);
-        imageView.setSmooth(true);
-        imageView.setCache(true);
-
-        lblNoImage = new Label("Keine Meldung ausgewählt.");
-
-        rightBox.getChildren().addAll(lblImageTitle, imageView, lblNoImage);
-
-        splitPane.getItems().addAll(leftBox, rightBox);
-        root.setCenter(splitPane);
-
-        HBox footer = new HBox();
-        footer.setPadding(new Insets(10));
-        footer.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
-        Button btnLogout = new Button("\uD83D\uDEAA Abmelden");
+        // Footer & Logout
+        Button btnLogout = new Button("🚪 Abmelden");
+        btnLogout.getStyleClass().add("card-button");
         btnLogout.setTooltip(new Tooltip("Abmelden und Dashboard schließen"));
-        footer.getChildren().add(btnLogout);
+        btnLogout.setOnAction(e -> stage.close());
+        Label copy = new Label("© 2025 CityCare");
+        copy.setStyle("-fx-text-fill: #888;");
+        HBox footer = new HBox(10, copy, btnLogout);
+        footer.setAlignment(Pos.CENTER_RIGHT);
+        footer.setPadding(new Insets(10, 20, 20, 20));
+
+        // Zusammenbauen
+        BorderPane root = new BorderPane();
+        root.setTop(header);
+        root.setCenter(scroll);
         root.setBottom(footer);
 
-        Scene scene = new Scene(root, 1000, 600);
+        Scene scene = new Scene(root, 900, 700);
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
 
-        btnUpdate.setOnAction(e -> {
-            Complaint selected = table.getSelectionModel().getSelectedItem();
-            String newStatus = cbNewStatus.getValue();
-            if (selected != null && newStatus != null) {
-                complaintService.updateComplaintStatus(selected.getId(), newStatus);
-                Toast.show(stage, "Status aktualisiert auf: " + newStatus);
-                loadData();
-            }
-        });
-
-        btnDelete.setOnAction(e -> {
-            Complaint selected = table.getSelectionModel().getSelectedItem();
-            if (selected != null) {
-                Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
-                confirm.setTitle("Löschen bestätigen");
-                confirm.setHeaderText("Meldung wirklich löschen?");
-                confirm.setContentText("Diese Aktion kann nicht rückgängig gemacht werden.");
-
-                confirm.showAndWait().ifPresent(response -> {
-                    if (response == ButtonType.OK) {
-                        complaintService.deleteComplaintById(selected.getId());
-                        Toast.show(stage, "Meldung erfolgreich gelöscht.");
-                        loadData();
-                        imageView.setImage(null);
-                        lblNoImage.setText("Keine Meldung ausgewählt.");
-                    }
-                });
-            } else {
-                Toast.show(stage, "Bitte wähle eine Meldung aus.");
-            }
-        });
-
-
-        btnLogout.setOnAction(e -> stage.close());
-
-
-        table.getSelectionModel().selectedItemProperty().addListener((obs, oldSel, newSel) -> {
-            if (newSel != null && newSel.getImagePath() != null) {
-                String relPath = newSel.getImagePath();
-                File file = new File(System.getProperty("user.dir") + File.separator + relPath);
-                if (file.exists()) {
-                    Image img = new Image(file.toURI().toString());
-                    imageView.setImage(img);
-                    lblNoImage.setText("");
-                } else {
-                    imageView.setImage(null);
-                    lblNoImage.setText("Bilddatei nicht gefunden.");
-                }
-            } else {
-                imageView.setImage(null);
-                lblNoImage.setText("Kein Bild zur Meldung vorhanden.");
-            }
-        });
+        loadCards();
     }
 
-    private void loadData() {
-        List<Complaint> list = complaintService.getAllComplaints();
-        dataList.setAll(list);
+    private void loadCards() {
+        cardContainer.getChildren().clear();
+        List<Complaint> complaints = complaintService.getAllComplaints();
+
+        for (Complaint c : complaints) {
+            VBox card = new VBox(8);
+            card.getStyleClass().add("card");
+            card.setPadding(new Insets(12));
+            // Karte immer volle Breite
+            card.prefWidthProperty().bind(cardContainer.widthProperty().subtract(20));
+
+            // Bild (optional)
+            if (c.getImagePath() != null) {
+                File imgFile = new File(c.getImagePath());
+                if (imgFile.exists()) {
+                    ImageView iv = new ImageView(new Image(imgFile.toURI().toString(), 300, 0, true, true));
+                    card.getChildren().add(iv);
+                }
+            }
+
+            // Textinfos
+            Label lblSubject = new Label("📌 " + c.getSubject());
+            lblSubject.getStyleClass().add("card-label-title");
+
+            Label lblCategory = new Label("Kategorie: " + c.getCategory());
+            lblCategory.getStyleClass().add("card-label");
+
+            Label lblAddress = new Label("Adresse: " + c.getAddress());
+            lblAddress.getStyleClass().add("card-label");
+
+            Label lblDate = new Label("Gemeldet am: " +
+                    (c.getCreatedAt() != null ? c.getCreatedAt().toString() : "-"));
+            lblDate.getStyleClass().add("card-label");
+
+            Label lblStatus = new Label("Aktueller Status:");
+            lblStatus.getStyleClass().add("card-label");
+
+            // Status-Control
+            ComboBox<String> cbStatus = new ComboBox<>();
+            cbStatus.getItems().addAll("Offen", "In Bearbeitung", "Abgeschlossen");
+            cbStatus.setValue(c.getStatus() != null ? c.getStatus() : "Offen");
+
+            Button btnUpdate = new Button("🔄 Aktualisieren");
+            btnUpdate.getStyleClass().add("card-button");
+            btnUpdate.setOnAction(e -> {
+                String newStatus = cbStatus.getValue();
+                complaintService.updateComplaintStatus(c.getId(), newStatus);
+                Toast.show(stage, "Status geändert zu: " + newStatus);
+                loadCards();
+            });
+
+            Button btnDelete = new Button("🗑️ Löschen");
+            btnDelete.getStyleClass().addAll("card-button", "danger");
+            btnDelete.setOnAction(e -> {
+                complaintService.deleteComplaintById(c.getId());
+                Toast.show(stage, "Meldung gelöscht.");
+                loadCards();
+            });
+
+            HBox actionBox = new HBox(8, lblStatus, cbStatus, btnUpdate, btnDelete);
+            actionBox.setAlignment(Pos.CENTER_LEFT);
+
+            card.getChildren().addAll(
+                    lblSubject,
+                    lblCategory,
+                    lblAddress,
+                    lblDate,
+                    actionBox
+            );
+
+            cardContainer.getChildren().add(card);
+        }
     }
 }
