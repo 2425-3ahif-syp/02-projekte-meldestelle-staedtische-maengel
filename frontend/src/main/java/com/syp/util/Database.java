@@ -74,7 +74,7 @@ public class Database {
             stmt.execute(sqlUser);
 
             String sqlReport=
-                    "CREATE TABLE report ("
+                    "CREATE TABLE IF NOT EXISTS report ("
                     + "id IDENTITY PRIMARY KEY,"
                     + "complaint_id INT NOT NULL,"
                     + "reason VARCHAR(255),"
