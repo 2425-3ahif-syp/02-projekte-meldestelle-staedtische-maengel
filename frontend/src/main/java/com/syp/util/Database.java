@@ -75,7 +75,7 @@ public class Database {
 
             String sqlReport=
                     "CREATE TABLE IF NOT EXISTS report ("
-                    + "id IDENTITY PRIMARY KEY,"
+                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
                     + "complaint_id INT NOT NULL,"
                     + "reason VARCHAR(255),"
                     + "report_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
