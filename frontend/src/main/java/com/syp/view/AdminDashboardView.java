@@ -27,7 +27,7 @@ public class AdminDashboardView {
 
     public void show() {
         stage = new Stage();
-        stage.setTitle("Admin Dashboard");
+        stage.setTitle("\uD83D\uDEE0\uFE0F Admin Dashboard");
 
         BorderPane root = new BorderPane();
 
@@ -91,8 +91,12 @@ public class AdminDashboardView {
         ComboBox<String> cbNewStatus = new ComboBox<>();
         cbNewStatus.getItems().addAll("Offen", "In Bearbeitung", "Abgeschlossen");
         cbNewStatus.setValue("Offen");
-        Button btnDelete = new Button("Löschen");
-        Button btnUpdate = new Button("Status aktualisieren");
+        Button btnDelete = new Button("\uD83D\uDDD1\uFE0F Löschen");
+        Button btnUpdate = new Button("✏\uFE0F Status aktualisieren");
+
+        btnDelete.setTooltip(new Tooltip("Meldung löschen"));
+        btnUpdate.setTooltip(new Tooltip("Status der Meldung ändern"));
+
         statusBox.getChildren().addAll(lblNewStatus, cbNewStatus, btnUpdate, btnDelete);
 
         leftBox.getChildren().addAll(table, statusBox);
@@ -118,7 +122,8 @@ public class AdminDashboardView {
         HBox footer = new HBox();
         footer.setPadding(new Insets(10));
         footer.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
-        Button btnLogout = new Button("Abmelden");
+        Button btnLogout = new Button("\uD83D\uDEAA Abmelden");
+        btnLogout.setTooltip(new Tooltip("Abmelden und Dashboard schließen"));
         footer.getChildren().add(btnLogout);
         root.setBottom(footer);
 

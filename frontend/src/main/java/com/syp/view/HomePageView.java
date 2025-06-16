@@ -57,7 +57,9 @@ public class HomePageView {
         Region headerSpacer = new Region();
         HBox.setHgrow(headerSpacer, Priority.ALWAYS);
 
-        Button btnLogin = new Button("Anmelden");
+        Button btnLogin = new Button(" \uD83D\uDD10 Anmelden");
+        btnLogin.setTooltip(new Tooltip("Als Gemeinde anmelden"));
+
         btnLogin.getStyleClass().add("button");
         btnLogin.setOnAction(e -> openLoginDialog());
 
@@ -85,11 +87,14 @@ public class HomePageView {
         statusFilter.getItems().addAll("Alle", "Offen", "In Bearbeitung", "Abgeschlossen");
         statusFilter.setValue("Alle");
 
-        Button btnSearch = new Button("Suchen");
+        Button btnSearch = new Button("\uD83D\uDD0D Suchen");
+        btnSearch.setTooltip(new Tooltip("Meldungen durchsuchen"));
+
         btnSearch.getStyleClass().add("button");
         btnSearch.setOnAction(e -> loadFilteredData());
 
-        Button btnCreateReport = new Button("Neue Meldung");
+        Button btnCreateReport = new Button("➕ Neue Meldung");
+        btnCreateReport.setTooltip(new Tooltip("Neue Mängelmeldung erstellen"));
         btnCreateReport.getStyleClass().add("button");
         btnCreateReport.setOnAction(e -> openCreateComplaintDialog());
 
