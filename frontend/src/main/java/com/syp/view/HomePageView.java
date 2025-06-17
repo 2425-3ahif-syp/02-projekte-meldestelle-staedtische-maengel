@@ -1,15 +1,9 @@
 package com.syp.view;
 
 import com.syp.model.Complaint;
-import com.syp.model.Report;
 import com.syp.service.ComplaintService;
-import com.syp.service.ReportService;
 import com.syp.util.Config;
 import com.syp.util.Toast;
-import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -18,26 +12,19 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.io.File;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 public class HomePageView {
     private final Stage primaryStage;
     private final ComplaintService complaintService = new ComplaintService();
-    private final ReportService reportService = new ReportService();
 
-
-    private TableView<Complaint> tableComplaints;
     private TextField searchField;
     private ComboBox<String> categoryFilter;
     private ComboBox<String> statusFilter;
-    private ObservableList<Complaint> dataList;
+    private VBox complaintsBox = new VBox(12);
 
-    // Detailbereich rechts
     private ImageView detailImageView;
     private Label detailSubject;
     private Label detailCategory;
@@ -49,168 +36,70 @@ public class HomePageView {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("CityCare – Mängelmeldesystem");
 
-        StackPane root = new StackPane();
+        // Root und Header
+        BorderPane root = new BorderPane();
         root.getStyleClass().add("root");
 
-
-        HBox header = new HBox();
+        HBox header = new HBox(10);
         header.getStyleClass().add("header");
-        header.setPadding(new Insets(10));
+        header.setPadding(new Insets(15,20,15,20));
         header.setAlignment(Pos.CENTER_LEFT);
-
-        Label lblCityName = new Label(Config.getCityName());
-        lblCityName.getStyleClass().add("header-label");
-
-        Region headerSpacer = new Region();
-        HBox.setHgrow(headerSpacer, Priority.ALWAYS);
-
-        Button btnLogin = new Button(" \uD83D\uDD10 Anmelden");
-        btnLogin.setTooltip(new Tooltip("Als Gemeinde anmelden"));
-
+        Label lblCity = new Label(Config.getCityName());
+        lblCity.getStyleClass().add("header-label");
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        Button btnLogin = new Button("🔒 Anmelden");
         btnLogin.getStyleClass().add("button");
         btnLogin.setOnAction(e -> openLoginDialog());
+        header.getChildren().addAll(lblCity, spacer, btnLogin);
+        root.setTop(header);
 
-        header.getChildren().addAll(lblCityName, headerSpacer, btnLogin);
+        // Links: Filter + Card-Liste
+        VBox leftPane = new VBox(12);
+        leftPane.setPadding(new Insets(10));
 
-        SplitPane splitPane = new SplitPane();
-        splitPane.setDividerPositions(0.55);
-        splitPane.setPadding(new Insets(10));
-
-        VBox leftBox = new VBox();
-        leftBox.setSpacing(10);
-
-        HBox filterBox = new HBox();
-        filterBox.setSpacing(10);
+        HBox filterBox = new HBox(8);
         filterBox.setAlignment(Pos.CENTER_LEFT);
 
         searchField = new TextField();
         searchField.setPromptText("Suchbegriff");
 
         categoryFilter = new ComboBox<>();
-        categoryFilter.getItems().addAll("Alle", "Straße", "Laterne", "Vandalismus");
+        categoryFilter.getItems().setAll("Alle","Straße","Laterne","Vandalismus");
         categoryFilter.setValue("Alle");
 
         statusFilter = new ComboBox<>();
-        statusFilter.getItems().addAll("Alle", "Offen", "In Bearbeitung", "Abgeschlossen");
+        statusFilter.getItems().setAll("Alle","Offen","In Bearbeitung","Abgeschlossen");
         statusFilter.setValue("Alle");
 
-        Button btnSearch = new Button("\uD83D\uDD0D Suchen");
-        btnSearch.setTooltip(new Tooltip("Meldungen durchsuchen"));
-
+        Button btnSearch = new Button("🔍 Suchen");
         btnSearch.getStyleClass().add("button");
         btnSearch.setOnAction(e -> loadFilteredData());
 
-        Button btnCreateReport = new Button("➕ Neue Meldung");
-        btnCreateReport.setTooltip(new Tooltip("Neue Mängelmeldung erstellen"));
-        btnCreateReport.getStyleClass().add("button");
-        btnCreateReport.setOnAction(e -> openCreateComplaintDialog());
+        Button btnNew = new Button("➕ Neue Meldung");
+        btnNew.getStyleClass().add("button");
+        btnNew.setOnAction(e -> {
+            new CreateComplaintView().showAndWait();
+            loadFilteredData();
+        });
 
         filterBox.getChildren().addAll(
-                searchField, categoryFilter, statusFilter, btnSearch, btnCreateReport
+                searchField, categoryFilter, statusFilter, btnSearch, btnNew
         );
 
-        tableComplaints = new TableView<>();
-        tableComplaints.setPlaceholder(new Label("Keine Meldungen vorhanden"));
-        tableComplaints.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        ScrollPane scroll = new ScrollPane(complaintsBox);
+        scroll.setFitToWidth(true);
+        complaintsBox.setPadding(new Insets(10));
 
-        TableColumn<Complaint, ImageView> colImage = new TableColumn<>("Bild");
-        colImage.setCellValueFactory(cell -> {
-            String relPath = cell.getValue().getImagePath();
-            if (relPath != null) {
-                File file = new File(System.getProperty("user.dir") + File.separator + relPath);
-                if (file.exists()) {
-                    Image img = new Image(file.toURI().toString(), 50, 50, true, true);
-                    ImageView iv = new ImageView(img);
-                    iv.setSmooth(true);
-                    return new ReadOnlyObjectWrapper<>(iv);
-                }
-            }
-            return new ReadOnlyObjectWrapper<>(null);
-        });
-        colImage.setPrefWidth(60);
-        colImage.setResizable(false);
+        leftPane.getChildren().addAll(filterBox, scroll);
 
-        TableColumn<Complaint, String> colSubject = new TableColumn<>("Betreff");
-        colSubject.setCellValueFactory(cell -> cell.getValue().subjectProperty());
-        colSubject.setPrefWidth(180);
+        // Rechts: Detail-Ansicht
+        VBox rightPane = new VBox(10);
+        rightPane.getStyleClass().add("detail-container");
+        rightPane.setPadding(new Insets(15));
 
-        TableColumn<Complaint, String> colCategory = new TableColumn<>("Kategorie");
-        colCategory.setCellValueFactory(cell -> cell.getValue().categoryProperty());
-        colCategory.setPrefWidth(100);
-
-        TableColumn<Complaint, String> colAddress = new TableColumn<>("Standort");
-        colAddress.setCellValueFactory(cell -> cell.getValue().addressProperty());
-        colAddress.setPrefWidth(140);
-
-        TableColumn<Complaint, String> colStatus = new TableColumn<>("Status");
-        colStatus.setCellValueFactory(cell -> cell.getValue().statusProperty());
-        colStatus.setPrefWidth(120);
-
-        TableColumn<Complaint, String> colCreatedAt = new TableColumn<>("Erstellt am");
-        colCreatedAt.setCellValueFactory(cell -> {
-            if (cell.getValue().getCreatedAt() != null) {
-                return new SimpleStringProperty(cell.getValue().getCreatedAt().toString());
-            }
-            return new SimpleStringProperty("");
-        });
-        colCreatedAt.setPrefWidth(140);
-
-        // Button-Spalte für "Melden"
-        TableColumn<Complaint, Void> colReport = new TableColumn<>("Melden");
-
-        Callback<TableColumn<Complaint, Void>, TableCell<Complaint, Void>> cellFactory = new Callback<>() {
-            @Override
-            public TableCell<Complaint, Void> call(final TableColumn<Complaint, Void> param) {
-                return new TableCell<>() {
-
-                    private final Button btn = new Button("Melden");
-
-                    {
-                        btn.getStyleClass().add("button");
-                        btn.setOnAction(event -> {
-                            Complaint complaint = getTableView().getItems().get(getIndex());
-                            openReportDialogView(complaint);
-                        });
-                    }
-
-                    @Override
-                    public void updateItem(Void item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            setGraphic(btn);
-                        }
-                    }
-                };
-            }
-        };
-
-        colReport.setCellFactory(cellFactory);
-        colReport.setPrefWidth(100); // optional
-
-        tableComplaints.getColumns().addAll(
-                colImage, colSubject, colCategory, colAddress, colStatus, colCreatedAt, colReport
-        );
-
-
-        dataList = FXCollections.observableArrayList();
-        tableComplaints.setItems(dataList);
-
-        tableComplaints.getSelectionModel().selectedItemProperty().addListener((obs, oldSel, newSel) -> {
-            showDetails(newSel);
-        });
-
-        leftBox.getChildren().addAll(filterBox, tableComplaints);
-
-        VBox rightBox = new VBox();
-        rightBox.getStyleClass().add("detail-container");
-        rightBox.setSpacing(10);
-        rightBox.setPadding(new Insets(10));
-
-        Label lblDetailsTitle = new Label("Detailansicht");
-        lblDetailsTitle.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
-
+        Label lblDetail = new Label("Detailansicht");
+        lblDetail.getStyleClass().add("card-label-title");
         detailImageView = new ImageView();
         detailImageView.setFitWidth(250);
         detailImageView.setPreserveRatio(true);
@@ -224,10 +113,9 @@ public class HomePageView {
         detailDescription.setWrapText(true);
         detailDescription.setEditable(false);
         detailDescription.setPrefRowCount(4);
-        detailDescription.setPrefColumnCount(20);
 
-        rightBox.getChildren().addAll(
-                lblDetailsTitle,
+        rightPane.getChildren().addAll(
+                lblDetail,
                 detailImageView,
                 detailSubject,
                 detailCategory,
@@ -237,75 +125,96 @@ public class HomePageView {
                 detailDescription
         );
 
-        splitPane.getItems().addAll(leftBox, rightBox);
+        // SplitPane
+        SplitPane sp = new SplitPane(leftPane, rightPane);
+        sp.setDividerPositions(0.5);
+        root.setCenter(sp);
 
+        // Footer
         HBox footer = new HBox();
         footer.getStyleClass().add("footer");
         footer.setPadding(new Insets(10));
         footer.setAlignment(Pos.CENTER);
-        Label lblFooter = new Label("© 2025 CityCare | Alle Rechte vorbehalten");
-        lblFooter.getStyleClass().add("footer-label");
-        footer.getChildren().add(lblFooter);
+        Label lblFoot = new Label("© 2025 CityCare | Alle Rechte vorbehalten");
+        lblFoot.getStyleClass().add("footer-label");
+        footer.getChildren().add(lblFoot);
+        root.setBottom(footer);
 
-        BorderPane borderPane = new BorderPane();
-        borderPane.setTop(header);
-        borderPane.setCenter(splitPane);
-        borderPane.setBottom(footer);
-
-        root.getChildren().add(borderPane);
-
+        // Scene
         Scene scene = new Scene(root, 1100, 650);
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
+
         loadFilteredData();
     }
 
     private void loadFilteredData() {
+        complaintsBox.getChildren().clear();
         String text = searchField.getText().trim();
-        String category = categoryFilter.getValue();
-        if ("Alle".equals(category)) category = null;
-        String status = statusFilter.getValue();
-        if ("Alle".equals(status)) status = null;
+        String cat  = "Alle".equals(categoryFilter.getValue()) ? null : categoryFilter.getValue();
+        String stat = "Alle".equals(statusFilter.getValue())   ? null : statusFilter.getValue();
 
-        try {
-            List<Complaint> list = complaintService.getFilteredComplaints(
-                    text.isEmpty() ? null : text, category, status
-            );
-            dataList.setAll(list);
-        } catch (Exception ex) {
-            Toast.show(primaryStage, "Fehler beim Laden der Daten.");
-            ex.printStackTrace();
+        List<Complaint> list = complaintService.getFilteredComplaints(
+                text.isEmpty() ? null : text,
+                cat, stat
+        );
+        if (list.isEmpty()) {
+            Label none = new Label("Keine Meldungen gefunden.");
+            none.getStyleClass().add("info-label");
+            complaintsBox.getChildren().add(none);
+            return;
+        }
+
+        for (Complaint c : list) {
+            // Card erzeugen
+            VBox card = new VBox(6);
+            card.getStyleClass().add("card");
+            card.setPadding(new Insets(12));
+            card.prefWidthProperty().bind(complaintsBox.widthProperty().subtract(20));
+
+            // Bild (Thumbnail)
+            if (c.getImagePath() != null) {
+                File imgF = new File(System.getProperty("user.dir"), c.getImagePath());
+                if (imgF.exists()) {
+                    ImageView iv = new ImageView(
+                            new Image(imgF.toURI().toString(), 300, 0, true, true)
+                    );
+                    card.getChildren().add(iv);
+                }
+            }
+
+            // Text-Labels
+            Label lSubj = new Label("📌 " + c.getSubject());
+            lSubj.getStyleClass().add("card-label-title");
+            Label lCat  = new Label("Kategorie: " + c.getCategory());
+            lCat.getStyleClass().add("card-label");
+            Label lAddr = new Label("Standort: " + c.getAddress());
+            lAddr.getStyleClass().add("card-label");
+            Label lDate = new Label("Erstellt am: " +
+                    (c.getCreatedAt() != null ? c.getCreatedAt().toString() : "-"));
+            lDate.getStyleClass().add("card-label");
+
+            // „Melden“-Button
+            Button btnReport = new Button("🚩 Melden");
+            btnReport.getStyleClass().add("card-button");
+            btnReport.setOnAction(e -> {
+                new ReportDialogView(c).showAndWait()
+                        .ifPresent(reason -> {
+                            // speichere Report
+                            new com.syp.service.ReportService()
+                                    .saveReport(c.getId(), reason);
+                            Toast.show(primaryStage, "Vielen Dank für dein Feedback!");
+                        });
+            });
+
+            // Klick auf Card lädt Detail
+            card.setOnMouseClicked(e -> showDetails(c));
+
+            card.getChildren().addAll(lSubj, lCat, lAddr, lDate, btnReport);
+            complaintsBox.getChildren().add(card);
         }
     }
-
-
-    private void openCreateComplaintDialog() {
-        CreateComplaintView createView = new CreateComplaintView();
-        createView.showAndWait();
-        loadFilteredData();
-    }
-
-    private void openReportDialogView(Complaint complaint) {
-        ReportDialogView reportDialog = new ReportDialogView(complaint);
-
-        Optional<String> maybeReason = reportDialog.showAndWait();
-        maybeReason.ifPresent(reason -> {
-            Report report = new Report(0, complaint.getId(), reason, LocalDateTime.now());
-            reportService.saveReport(report.getComplaintId(), report.getReason());
-        });
-    }
-
-    private void openLoginDialog() {
-        LoginView loginView = new LoginView();
-        boolean success = loginView.showAndWait();
-        if (success) {
-            AdminDashboardView adminView = new AdminDashboardView();
-            adminView.show();
-            loadFilteredData();
-        }
-    }
-
 
     private void showDetails(Complaint c) {
         if (c == null) {
@@ -318,13 +227,11 @@ public class HomePageView {
             return;
         }
 
-
-        String relPath = c.getImagePath();
-        if (relPath != null) {
-            File file = new File(System.getProperty("user.dir") + File.separator + relPath);
-            if (file.exists()) {
-                Image img = new Image(file.toURI().toString());
-                detailImageView.setImage(img);
+        // Bild groß
+        if (c.getImagePath() != null) {
+            File f = new File(System.getProperty("user.dir"), c.getImagePath());
+            if (f.exists()) {
+                detailImageView.setImage(new Image(f.toURI().toString()));
             } else {
                 detailImageView.setImage(null);
             }
@@ -332,10 +239,20 @@ public class HomePageView {
             detailImageView.setImage(null);
         }
 
-        detailSubject.setText("Betreff: " + c.getSubject());
+        detailSubject.setText("Betreff: "   + c.getSubject());
         detailCategory.setText("Kategorie: " + c.getCategory());
-        detailAddress.setText("Standort: " + c.getAddress());
-        detailStatus.setText("Status: " + c.getStatus());
-        detailDescription.setText(c.getDescription() != null ? c.getDescription() : "");
+        detailAddress.setText("Standort: "   + c.getAddress());
+        detailStatus.setText("Status: "      + c.getStatus());
+        detailDescription.setText(
+                c.getDescription() != null ? c.getDescription() : ""
+        );
+    }
+
+    private void openLoginDialog() {
+        boolean ok = new LoginView().showAndWait();
+        if (ok) {
+            new AdminDashboardView().show();
+            loadFilteredData();
+        }
     }
 }

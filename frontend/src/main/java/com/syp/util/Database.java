@@ -73,14 +73,14 @@ public class Database {
                             + ");";
             stmt.execute(sqlUser);
 
-            String sqlReport=
+            String sqlReport =
                     "CREATE TABLE IF NOT EXISTS report ("
-                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
-                    + "complaint_id INT NOT NULL,"
-                    + "reason VARCHAR(255),"
-                    + "report_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
-                    + "FOREIGN KEY (complaint_id) REFERENCES complaint(id)"
-                    + ");";
+                            + "  id INT AUTO_INCREMENT PRIMARY KEY,"
+                            + "  complaint_id INT NOT NULL,"
+                            + "  reason VARCHAR(255),"
+                            + "  report_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
+                            + "  FOREIGN KEY (complaint_id) REFERENCES complaint(id) ON DELETE CASCADE"
+                            + ");";
             stmt.execute(sqlReport);
 
 
