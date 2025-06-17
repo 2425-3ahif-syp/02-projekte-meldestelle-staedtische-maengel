@@ -8,3 +8,5 @@ ACHTUNG: Datenbank wird automatisch laufen beim Starten des Programms, bitte nic
 Login als Admin:
 Benutzername: admin
 Passwort: admin
+
+Falls Sie denken, dass Daten nicht korrekt laden: bitte auf Suche klicken um die Daten zu aktualisieren.
